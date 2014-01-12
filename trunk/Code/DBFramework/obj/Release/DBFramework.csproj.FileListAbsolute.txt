@@ -1,4 +1,0 @@
-E:\Workspace\Softeware\项目\人员定位系统\源代码\Database\DBFramework\bin\Release\DBFramework.dll
-E:\Workspace\Softeware\项目\人员定位系统\源代码\Database\DBFramework\bin\Release\DBFramework.pdb
-E:\Workspace\Softeware\项目\人员定位系统\源代码\Database\DBFramework\obj\Release\DBFramework.dll
-E:\Workspace\Softeware\项目\人员定位系统\源代码\Database\DBFramework\obj\Release\DBFramework.pdb
