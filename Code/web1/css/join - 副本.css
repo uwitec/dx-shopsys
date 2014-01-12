@@ -1,0 +1,98 @@
+#shadow {
+	width:100%;
+	float:left;
+	background:url('../images/join.png') no-repeat center top;
+	position:relative;
+	top:12px;
+}
+#page {
+	width:980px;
+	margin:auto;
+}
+#header {
+	height:250px;
+	width:870px;
+	position:relative;
+}
+#header h1 {
+	float:left;
+	font-size:30px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	line-height:55px;
+	margin:70px 0px 0px 0px;
+	padding:0;
+	letter-spacing:-2px;
+}
+#content {
+	margin:auto;
+	width:840px;
+	position:relative;
+	top:0px;
+	padding:0px 70px;
+	background:url(../images/content_bg.png) left top repeat;
+}
+#content h3 {
+	font-size:30px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	margin:0px;
+	padding:0px;
+	line-height:150%;
+	font-weight:bold;
+}
+#strip #menu li.partners a {
+	background: url('../images/menu_bg_hover2.png') no-repeat top center;
+	color:#fff;
+}
+#strip #menu li.partners ul li a {
+	background:none;
+}
+#strip #menu li.partners ul li.join a {
+	background: url('../images/menu_sub_bg_hover.png') no-repeat;
+	color:#fff;
+}
+ul,li{ margin:0px; padding:0px; list-style:none;}
+.apply{ width:575px; overflow:hidden; zoom:1; padding-left:100px; padding-top:20px; padding-bottom:30px;}
+.apply li{ zoom:1; overflow:hidden; clear:both; padding-bottom:22px; float:left; width:575px;}
+.apply li strong,.apply li input.inptxt{ float:left; height:38px; line-height:38px; overflow:hidden;}
+.apply li strong{ text-align:right; padding-right:16px; font-weight:normal; overflow:hidden;}
+.apply li input.inptxt{ border:0px; background-color:#646464; color:#fff; padding:0px 4px;} 
+.apply li .message{ float:left; width:454px; height:134px;background-color:#646464; padding:5px;}
+.apply li .message select{ width:454px;}
+.apply li .message textarea{ width:452px; height:100px; border:0px; color:#fff;background-color:#646464;resize:none;}
+/**/.apply li label{ float:left;}
+.apply li label input{ margin-top:-6px;margin-top:-18px;}
+.apply li.cklist label,.apply li.cklist input{ float:left;}
+.apply li.cklist label{ margin-right:10px; margin-left:4px;}
+
+.joinBtn{ padding-left:216px; padding-top:15px;}
+
+button.btn1,input.btn1{ background:url(../images/btn_join2.png); border:0px; width:107px; height:28px; text-align:center; line-height:28px; cursor:pointer; margin-right:56px; color:#fff;}
+button.btn2,input.btn2{ background:url(../images/btn_join1.png); color:#646464;}
+
+.w76{ width:68px;}
+.w84{ width:76px;}
+.w174{ width:166px;}
+.w464{ width:456px;}
+
+.w95{ width:95px;}
+.w47{ width:47px;}
+.w51{ width:51px;}
+.w100{ width:100px;}
+
+.w90{ width:90px;}
+
+
+.tbl_join{border-collapse: collapse;border-spacing: 0;}
+.tbl_join th{ border:1px solid #646464; font-weight:normal; text-align:left; line-height:20px; padding:20px 25px;}
+.tbl_join td{ border:1px solid #646464; text-align:center; line-height:20px; padding:15px 25px;}
+
+#content h3{line-height:20px!important; font-size:20px!important; padding-bottom:5px;}
+#content p{ margin:0px; padding:9px 0px 9px;}
+
+.h9{ height:9px; overflow:hidden;}

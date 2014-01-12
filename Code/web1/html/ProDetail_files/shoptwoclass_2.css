@@ -1,0 +1,160 @@
+.shoptwoclass_brand_cap {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 18px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/cap.jpg) no-repeat 0px 0px; HEIGHT: 37px; PADDING-TOP: 0px
+}
+.shoptwoclass_brand_cat {
+	TEXT-ALIGN: center;
+	MARGIN-TOP: 6px;
+	WIDTH: 95px;
+	FONT: 12px/28px Simsun;
+	FLOAT: left;
+	HEIGHT: 25px;
+	COLOR: #000;
+	CURSOR: pointer;
+	MARGIN-RIGHT: 3px;
+	background-image: url(../images/cbcap1.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.shoptwoclass_brand_cat_on {
+	TEXT-ALIGN: center;
+	MARGIN-TOP: 6px;
+	WIDTH: 95px;
+	FONT: 12px/28px Simsun;
+	FLOAT: left;
+	HEIGHT: 25px;
+	COLOR: #000;
+	CURSOR: pointer;
+	MARGIN-RIGHT: 3px;
+	background-image: url(../images/cbcap1.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.shoptwoclass_brand_brand {
+	TEXT-ALIGN: center;
+	MARGIN-TOP: 6px;
+	WIDTH: 95px;
+	FONT: 12px/28px Simsun;
+	FLOAT: left;
+	HEIGHT: 25px;
+	COLOR: #000;
+	CURSOR: pointer;
+	background-image: url(../images/cbcap2.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.shoptwoclass_brand_brand_on {
+	TEXT-ALIGN: center;
+	MARGIN-TOP: 6px;
+	WIDTH: 95px;
+	FONT: 12px/28px Simsun;
+	FLOAT: left;
+	HEIGHT: 25px;
+	COLOR: #000;
+	CURSOR: pointer;
+	background-image: url(../images/cbcap1.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.shoptwoclass {
+	padding-bottom:30px;
+	
+}
+.shoptwoclass_top {
+	PADDING-LEFT: 12px;
+	FONT: 14px/30px Verdana, Arial, Helvetica, sans-serif;
+	COLOR: #2e2e2e;
+	CLEAR: both;
+	BORDER-TOP: #e0e0e0 1px solid;
+	background-image: url(../images/cbcap3.jpg);
+	background-position: center top;
+	width: 202px;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+}
+.shoptwoclass .shoptwoclass_top A {
+	PADDING-LEFT: 12px; FONT: 12px/30px Verdana, Arial, Helvetica, sans-serif; COLOR: #2e2e2e; TEXT-DECORATION: none
+}
+.shoptwoclass .shoptwoclass_top A:visited {
+	COLOR: #505050; TEXT-DECORATION: none
+}
+.shoptwoclass .shoptwoclass_top A:hover {
+	COLOR: #ff6600; TEXT-DECORATION: underline
+}
+.shoptwoclass_topright {
+	WIDTH: 32px;
+	FLOAT: right;
+	HEIGHT: 28px;
+	CURSOR: pointer;
+	background-image: url(../images/cbcap1.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.shoptwoclass_topright_open {
+	WIDTH: 32px;
+	FLOAT: right;
+	HEIGHT: 28px;
+	CURSOR: pointer;
+	background-image: url(../images/cbcap2.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.shoptwoclass-2 {
+	width:180px;
+	float:left;
+	margin: 0px;
+	height: auto;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.shoptwoclass-2_li {
+	width:160px;
+	height:18px;
+	padding-top:11px;
+	float:left;
+	margin: 0px;
+	padding-right: 0px;
+	padding-left: 20px;
+}
+
+.shoptwoclass-1 {
+	width:220px;
+	float:left;
+	background-image: url(index_29.jpg);
+	background-repeat: repeat-y;
+	background-position: left top;
+}
+.shoptwoclass1 UL {
+	PADDING-BOTTOM: 0px; MARGIN: 13px 0px 14px 12px; PADDING-LEFT: 0px; WIDTH: 175px; PADDING-RIGHT: 0px; BACKGROUND: #ffffff; PADDING-TOP: 0px
+}
+
+.shoptwoclass-1 UL LI {
+	PADDING-BOTTOM: 2px;
+	LIST-STYLE-TYPE: none;
+	FONT: 12px/22px Verdana, Arial, Helvetica, sans-serif;
+	WHITE-SPACE: nowrap;
+	FLOAT: left;
+	HEIGHT: 22px;
+	COLOR: #5c5c5c;
+	PADDING-TOP: 2px;
+	display: inline;
+	margin-left: 15px;
+	width: 83px;
+	overflow: hidden;
+}
+.shoptwoclass UL LI A {
+	MARGIN: 0px 3px; FONT: 12px/22px Verdana, Arial, Helvetica, sans-serif; COLOR: #5c5c5c; TEXT-DECORATION: none
+}
+.shoptwoclass UL LI A:visited {
+	COLOR: #505050
+}
+.shoptwoclass UL LI A:hover {
+	COLOR: #ff0000;
+}
+.shoptwoclass_brand {
+	BORDER-BOTTOM: #eaeaea 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #eaeaea 1px solid; DISPLAY: none; BORDER-TOP: #eaeaea 1px solid; BORDER-RIGHT: #eaeaea 1px solid
+}
+.shoptwoclass_brand LI {
+	BORDER-BOTTOM: #eaeaea 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #eaeaea 1px solid; LIST-STYLE-TYPE: none; MARGIN: 5px; BORDER-TOP: #eaeaea 1px solid; BORDER-RIGHT: #eaeaea 1px solid
+}

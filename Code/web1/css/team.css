@@ -1,0 +1,22 @@
+#shadow {width:100%;float:left;background:url('../images/team_shadow.png') no-repeat center top;position:relative;top:12px;}
+
+#page {width:870px;margin:auto;}
+
+#header {float:left;height:560px;width:870px;position:relative;}
+#header h1 {float:left;font-size:50px;width:580px;color:#fff;/*text-transform:uppercase;*/font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";line-height:55px;margin:70px 0px 0px 0px;padding:0;letter-spacing:-2px;} 
+#header h1 span{/*color:#ea6337;*/font-size:30px; display:block; line-height:34px;}                                                                         
+
+#content {margin:auto;width:870px;position:relative;top:0px;}
+#content .member {float:left;width:290px;position:relative;margin-bottom:25px;}
+#content .member .img {position:relative;float:left;background:url('../images/team_member_bg.png') left bottom no-repeat;width:233px;height:175px;text-align:Center;}
+#content .member .img img {position:relative;top:17px;}
+#content .member h3 {float:left;width:290px;display:block;font-size:20px;color:#1290cc;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";margin:0px;padding: 0px 10px;}
+#content .member span {float:left;width:270px;margin:0px;padding:0px 10px;color:#cccccc;font-size:15px;text-transform:uppercase;}
+#content .member p {float:left;width:270px;margin:0px;padding:0px 10px;color:#cccccc;font-size:15px;}
+#content img {margin:7px 0px;}
+
+#content .member h3{ font-family:Arial!important; font-weight:normal!important;}
+
+#strip #menu li.olympics a {background: url('../images/menu_bg_hover2.png') no-repeat top center;color:#fff;}
+#strip #menu li.olympics ul li a {background:none;}
+#strip #menu li.olympics ul li.team a {background: url('../images/menu_sub_bg_hover.png') no-repeat;color:#fff;}

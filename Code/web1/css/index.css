@@ -1,0 +1,135 @@
+html {
+	background: #282828 url('../images/home_bg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#shadow {
+	width:100%;
+	float:left;
+	background:none;
+	position:relative;
+	top:12px;
+}
+#navigation {
+	float:right;
+	position:relative;
+	top:120px;
+}
+#navigation ul {
+	list-style:none;
+	margin:0px;
+	padding:0;
+	width:400px;
+}
+#navigation ul li a {
+	float:left;
+	height:130px;
+	width:130px;
+	text-align:center;
+	vertical-align:middle;
+	line-height:128px;
+	font-size:19px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+#navigation ul li a:hover {
+	-webkit-transform: scale(0.95);
+	-moz-transform: scale(0.95);
+	-o-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	transform: scale(0.95);
+}
+#navigation ul li.about-us a {
+	position:absolute;
+	left:131px;
+	top:0px;
+	background-color: rgba(242, 146, 33, 0.9);
+}
+/*#navigation ul li.about-us a:hover {position:absolute;left:134px;top:3px;background-color: rgb(242, 146, 33);height:123px;width:123px;  }*/
+
+#navigation ul li.olympics a {
+	position:absolute;
+	left:262px;
+	top:0px;
+	background-color: rgba(79, 44, 92, 0.9);
+}
+/*#navigation ul li.olympics a:hover {position:absolute;left:265px;top:3px;background-color: rgb(79, 44, 92);height:123px;width:123px;}*/
+
+#navigation ul li.technology a {
+	position:absolute;
+	left:0px;
+	top:131px;
+	background-color: rgba(191, 46, 70, 0.9);
+	/*cursor:default;*/
+}
+/*#navigation ul li.technology a:hover {position:absolute;left:3px;top:134px;background-color: rgb(191, 46, 70);height:123px;width:123px;}*/
+                                                                                                                                                                      
+#navigation ul li.design a {
+	position:absolute;
+	left:131px;
+	top:131px;
+	background-color: rgba(241, 84, 28, 0.9);
+}
+/*#navigation ul li.design a:hover {position:absolute;left:134px;top:134px;background-color: rgb(241, 84, 28);height:123px;width:123px;}   */
+
+#navigation ul li.goals a {
+	position:absolute;
+	left:0px;
+	top:262px;
+	background-color: rgba(139, 48, 83, 0.9);
+	/*cursor:default;*/
+}
+/*#navigation ul li.goals a:hover {position:absolute;left:3px;top:265px;background-color: rgb(139, 48, 83);height:123px;width:123px;}      */
+
+#navigation ul li.partners a {
+	position:absolute;
+	left:262px;
+	top:262px;
+	background-color: rgba(113, 25, 59, 0.9);
+}
+/*#navigation ul li.partners a:hover {position:absolute;left:265px;top:265px;background-color: rgb(113, 25, 59);height:123px;width:123px;}*/
+
+.scroll{ position:absolute; top:200px; left:100px; width:978px; z-index:98; height:123px; overflow:hidden;}
+.scroll ul,.scroll li{ padding:0px; margin:0px;}
+.scroll li{ float:left; width:234px; height:123px; margin-right:14px; list-style:none; position:relative;}
+.scroll li .pic{width:97px;position:absolute; z-index:2; left:6px; top:10px;}
+.scroll li .txt{width:125px;position:absolute; z-index:3; left:105px; top:30px; color:#fff; line-height:18px; text-align:center;}
+.scroll li .txt a{ text-decoration:none;color:#fff; font-size:12px;}
+.scroll li .txt a:hover{text-decoration:none;color:#fff; font-size:12px;}
+.scroll li span{ position:absolute;background:url(../images/home/scroll_item_bg.png);width:234px; height:123px; z-index:1;}
+.scroll li.scon1{ cursor:pointer;}
+.scroll li.scon1 .txt{ top:40px;}
+.scroll li.scon4 .txt{ top:49px; font-size:20px;}
+.scroll li.scon4 .txt a,.scroll li.scon4 .txt a:hover{font-size:20px;}
+
+#shadow .prev{ width:28px; height:40px; background:url(../images/prev.png); position:absolute; z-index:99; cursor:pointer;}
+#shadow .next{ width:28px; height:40px; background:url(../images/next.png); position:absolute; z-index:99; cursor:pointer;}
+
+
+.dialog{ position:absolute; width:840px; height:470px; left:50%; margin-left:-420px; top:100px; background-color:#000; display:none; z-index:9999;}
+.dialog .content{ position:relative; width:840px; height:470px; z-index:1000;}
+.dialog .dClose{ background:url(../images/dClose.png); height:35px; width:35px; position:absolute; right:10px; top:10px;}
+.dialog .dCon{ position:absolute; top:48px; left:83px;}
+.dialog .dPrev{ background:url(../images/dPrev.png); width:17px; height:45px; position:absolute; left:32px; top:195px; cursor:pointer;}
+.dialog .dNext{ background:url(../images/dNext.png); width:17px; height:45px; position:absolute; right:32px;top:195px;cursor:pointer}
+.dialog li{ float:left; width:680px; height:380px;list-style:none;}
+.dialog li .pic{width:680px;}
+.dialog li .txt{width:680px;}
+
+#overlay{ position:absolute; background-color:#000; opacity:0.5; filter:alpha(opacity:50); left:0px; top:0px; z-index:9998; width:100%; height:100%; display:none;}
+
+
+.footer{position:absolute;}
+

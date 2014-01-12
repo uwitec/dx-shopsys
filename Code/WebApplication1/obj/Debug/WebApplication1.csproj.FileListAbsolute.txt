@@ -1,0 +1,10 @@
+d:\VS2010\RoutingSln\RoutingWeb\WebApplication1\bin\WebApplication1.dll
+d:\VS2010\RoutingSln\RoutingWeb\WebApplication1\bin\WebApplication1.pdb
+d:\VS2010\RoutingSln\RoutingWeb\WebApplication1\obj\Debug\ResolveAssemblyReference.cache
+d:\VS2010\RoutingSln\RoutingWeb\WebApplication1\obj\Debug\WebApplication1.dll
+d:\VS2010\RoutingSln\RoutingWeb\WebApplication1\obj\Debug\WebApplication1.pdb
+E:\web\dianxinwu\点心屋\dianxinSln\WebApplication1\bin\WebApplication1.dll
+E:\web\dianxinwu\点心屋\dianxinSln\WebApplication1\bin\WebApplication1.pdb
+E:\web\dianxinwu\点心屋\dianxinSln\WebApplication1\obj\Debug\ResolveAssemblyReference.cache
+E:\web\dianxinwu\点心屋\dianxinSln\WebApplication1\obj\Debug\WebApplication1.dll
+E:\web\dianxinwu\点心屋\dianxinSln\WebApplication1\obj\Debug\WebApplication1.pdb

@@ -1,0 +1,19 @@
+#shadow {width:100%;float:left;background:url('../images/trekking-shoes_shadow2.png') no-repeat center top;position:relative;top:12px;}
+
+#page {width:870px;margin:auto;}
+
+#header {float:left;height:640px;width:995px;}
+
+#header h1 {position:absolute;left:0px;top:135px;font-size:72px;color:#fff;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";line-height:55px;margin:50px 0px 0px 0px;padding:0;} 
+#header h1 span {color:#00aedd;}
+  
+#sub-header .box {margin:50px 0px 45px 0px;}
+  
+#content {margin:auto;width:870px;position:relative;top:0px;}
+#content h3 {float:left;display:block;font-size:44px;color:#fff;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";margin:40px 0px 5px 10px;padding:0;}
+
+#content .line {border-top:1px solid #414141;padding:60px 0px;float:left;width:870px;position:relative;}
+
+#strip #menu li.technology a {background: url('../images/menu_bg_hover2.png') no-repeat top center;color:#fff;}
+#strip #menu li.technology ul li a {background:none;}
+#strip #menu li.technology ul li.trekking-shoes a {background: url('../images/menu_sub_bg_hover.png') no-repeat;color:#fff;}

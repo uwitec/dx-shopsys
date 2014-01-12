@@ -1,0 +1,128 @@
+p,form,ul,h1,h2,h3,h4,h5,h6{margin:0; padding:0; list-style:none;}
+h4{height:24px; line-height:24px; border:1px solid #666; background-color:#FFF; color:#000; font-weight:bold; font-size:14px;}
+
+BODY {
+	MARGIN: 0px
+}
+form{ padding:0; margin:0;}
+P {
+	MARGIN: 0px
+}
+BODY {
+	COLOR: #000; BACKGROUND-COLOR: #fff
+}
+BODY {
+	FONT-SIZE: 12px; LINE-HEIGHT: 150%; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+TABLE {
+	FONT-SIZE: 12px; LINE-HEIGHT: 150%; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+INPUT {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+SELECT {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+TEXTAREA {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"
+}
+A:link {
+	COLOR: #036; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #036; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+A.menuChild:link {
+	COLOR: #036; TEXT-DECORATION: none
+}
+A.menuChild:visited {
+	COLOR: #036; TEXT-DECORATION: none
+}
+A.menuChild:hover {
+	COLOR: #f60; TEXT-DECORATION: underline
+}
+A.menuParent:link {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A.menuParent:visited {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A.menuParent:hover {
+	COLOR: #f60; TEXT-DECORATION: none
+}
+TABLE.position {
+	WIDTH: 100%
+}
+TR.position {
+	HEIGHT: 25px; BACKGROUND-COLOR: #f4f7fc
+}
+TD.position {
+	BORDER-RIGHT: #adceff 1px solid; PADDING-LEFT: 20px; BORDER-BOTTOM: #adceff 1px solid
+}
+TABLE.listTable {
+	WIDTH: 98%; BACKGROUND-COLOR: #b1ceee
+}
+TR.listHeaderTr {
+	FONT-WEIGHT: bold; HEIGHT: 25px; BACKGROUND-COLOR: #ebf4fd; TEXT-ALIGN: center
+}
+TR.listTr {
+	HEIGHT: 25px; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+TR.listAlternatingTr {
+	HEIGHT: 25px; BACKGROUND-COLOR: #fffdf0; TEXT-ALIGN: center
+}
+TR.listFooterTr {
+	HEIGHT: 30px; BACKGROUND-COLOR: #ebf4fd; TEXT-ALIGN: center
+}
+TABLE.editTable {
+	WIDTH: 98%; BACKGROUND-COLOR: #b1ceee
+}
+TR.editHeaderTr {
+	HEIGHT: 25px; BACKGROUND-COLOR: #ebf4fd
+}
+TD.editHeaderTd {
+	PADDING-LEFT: 50px; FONT-WEIGHT: bold
+}
+TR.editTr {
+	HEIGHT: 30px
+}
+TD.editLeftTd {
+	WIDTH: 150px; BACKGROUND-COLOR: #fffdf0; TEXT-ALIGN: center
+}
+TD.editRightTd {
+	PADDING-LEFT: 10px; BACKGROUND-COLOR: #fff
+}
+TR.editFooterTr {
+	HEIGHT: 40px; BACKGROUND-COLOR: #ebf4fd
+}
+TD.editFooterTd {
+	PADDING-LEFT: 150px
+}
+
+tr.menuParentTr{ cursor:pointer;}
+
+
+.LoginInput
+{
+    border: #000000 1px solid; font-size:14px;
+}
+
+/*±í¸ñ*/
+td{font-size:12px;}
+.tabelStyle{ border-bottom:#a9cae6 solid 1px; border-right:#a9cae6 solid 1px; cellpadding:0; cellspacing:0; font-size:12px; margin:4px 0;
+	
+}
+.tabelStyle a{}
+.tabelStyle th,.tabelStyle td{border-left:#a9cae6 solid 1px; border-top:#a9cae6 solid 1px;}
+.tabelStyle td{ padding-left:15px; height:30px;
+	}
+.tabelStyle td a{ color:#2c5f93;}
+.tabelStyle th{ height:30px; line-height:30px; background:url(../images/thBack.gif) left top repeat-x; color:#4f7d9e;}
+
+.tabelStyle02{}
+/**/
+.RadioList,.RadioList td,.RadioList div{ border:0;}
+.RadioList td{ height:24px; margin:2px; background-color:#D0DCF0; border:1px solid #9F81EF; padding-right:4px; padding-left:-8px;}
