@@ -35,3 +35,5 @@ E:\web\dianxinwu\点心屋\dianxinSln\web1\bin\web1.pdb
 E:\web\dianxinwu\点心屋\dianxinSln\web1\obj\Debug\ResolveAssemblyReference.cache
 E:\web\dianxinwu\点心屋\dianxinSln\web1\obj\Debug\web1.dll
 E:\web\dianxinwu\点心屋\dianxinSln\web1\obj\Debug\web1.pdb
+E:\web\dianxinwu\SVN\Code\web1\obj\Debug\ResolveAssemblyReference.cache
+E:\web\dianxinwu\SVN\Code\web1\obj\Debug\web1.pdb
