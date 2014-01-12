@@ -8,6 +8,8 @@ using web;
 using System.Data;
 using System.IO;
 using web;
+using DBFramework;
+using DBFramework.Entities;
 namespace web1.Admin
 {
     public partial class LeftMenu : System.Web.UI.Page
@@ -27,10 +29,8 @@ namespace web1.Admin
         }
         protected void bindProPlb()
         {
-            SQLHelper db = new SQLHelper();
-            db.sql = "SELECT lbid,lbname FROM " + com.tablePrefix + "lb WHERE parentid=4 Order By OrderId";
-            DataTable dt = db.Get_DataTable();
-            rptProLbParent.DataSource = dt;
+            List<DXLb> lbs = SQLHelper.GetEntities<DXLb>(" parentid = 4 Order By OrderId");
+            rptProLbParent.DataSource = lbs;
             rptProLbParent.DataBind();
         }
     }
