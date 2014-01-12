@@ -1,0 +1,29 @@
+#page {width:870px;margin:auto;}
+
+#header {float:left;height:560px;width:870px;position:relative;text-align:center;line-height:560px;}
+
+#sub-header {border-bottom:1px solid #414141;}
+
+#content {margin:auto;width:870px;position:relative;top:0px;}
+#content .line {padding:30px 0px;float:left;width:870px;position:relative;}
+#content .line .img {float:left;width:305px;}
+#content .line h3 {float:right;position:relative;width:520px;display:block;font-size:44px;color:#fff;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";margin:0px 0px 6px 0px;padding:0;}
+#content .line p {float:right;position:relative;width:520px;margin:0;}
+
+#content .desc h3, #content .desc p {width:550px;}
+#content .desc p {margin-bottom: 1em;}
+
+#strip #menu li.olympics a {background: url('../images/menu_bg_hover2.png') no-repeat top center;color:#fff;}
+#strip #menu li.olympics ul li a {background:none;}
+#strip #menu li.olympics ul li.participation a {background: url('../images/menu_sub_bg_hover.png') no-repeat;color:#fff;}
+
+#content h3 {
+	font-size:30px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	margin:0px;
+	padding:0px;
+	line-height:150%;
+}

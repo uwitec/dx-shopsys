@@ -1,0 +1,494 @@
+﻿using System;
+using System.Data;
+using System.Data.OleDb;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
+using System.Reflection;
+using System.Collections;
+
+namespace web
+{
+    ///////////////////////////////////////////////////////////////////////////
+    //Purpose：Excel文件导入导出,需引用Microsoft Excel 11.0 Object Library 
+    //Author: Dangmy 
+    //Date: 2007-03-09
+    //Version: 1.0
+    /////////////////////////////////////////////////////////////////////////// 
+    public class ExcelIO
+    {
+        private int _ReturnStatus;
+        private string _ReturnMessage;
+
+        public ExcelIO()
+        {
+        }
+
+        /// <summary>
+        /// 执行返回状态
+        /// </summary>
+        public int ReturnStatus
+        {
+            get { return _ReturnStatus; }
+        }
+
+        /// <summary>
+        /// 执行返回信息
+        /// </summary>
+        public string ReturnMessage
+        {
+            get { return _ReturnMessage; }
+        }
+
+        /// <summary>
+        /// 导入EXCEL到DataSet
+        /// </summary>
+        /// <param name="fileName">Excel全路径文件名</param>
+        /// <returns>导入成功的DataSet</returns>
+        public DataSet SubImportExcel(string fileName)
+        {
+            //判断是否安装EXCEL
+            Excel.Application xlApp = new Excel.ApplicationClass();
+            if (xlApp == null)
+            {
+                _ReturnStatus = -1;
+                _ReturnMessage = "无法创建Excel对象，可能您的计算机未安装Excel";
+                return null;
+            }
+
+            //判断文件是否被其他进程使用            
+            Excel.Workbook workbook;
+            try
+            {
+                workbook = xlApp.Workbooks.Open(fileName, 0, false, 5, "", "", false, Excel.XlPlatform.xlWindows, "", true, false, 0, true, 1, 0);
+            }
+            catch
+            {
+                _ReturnStatus = -1;
+                _ReturnMessage = "Excel文件处于打开状态，请保存关闭";
+                return null;
+            }
+
+            //获得所有Sheet名称
+            int n = workbook.Worksheets.Count;
+            string[] SheetSet = new string[n];
+            //System.Collections.ArrayList al = new System.Collections.ArrayList();
+            for (int i = 1; i <= n; i++)
+            {
+                SheetSet[i - 1] = ((Excel.Worksheet)workbook.Worksheets[i]).Name;
+            }
+
+            //释放Excel相关对象
+            workbook.Close(null, null, null);
+            xlApp.Quit();
+            if (workbook != null)
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                workbook = null;
+            }
+            if (xlApp != null)
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                xlApp = null;
+            }
+            GC.Collect();
+
+            string strEName = fileName.Substring(fileName.LastIndexOf(".") + 1, (fileName.Length - fileName.LastIndexOf(".") - 1));
+
+            //把EXCEL导入到DataSet
+            DataSet ds = new DataSet();
+            string connStr = string.Empty;
+
+            if (strEName == "xls")
+            {
+                connStr = " Provider = Microsoft.Jet.OLEDB.4.0 ; Data Source = " + fileName + ";Extended Properties='Excel 8.0;HDR=YES'";
+            }
+            else if (strEName == "xlsx")
+            {
+                connStr = " Provider = Microsoft.ACE.OLEDB.12.0 ; Data Source= " + fileName + ";Extended Properties='Excel 12.0 Xml;HDR=YES'";
+            }
+            else
+            {
+                return null;
+            }
+
+            using (OleDbConnection conn = new OleDbConnection(connStr))
+            {
+                conn.Open();
+                OleDbDataAdapter da;
+                for (int i = 1; i <= n; i++)
+                {
+                    string sql = "select * from [" + SheetSet[i - 1] + "$] ";
+                    da = new OleDbDataAdapter(sql, conn);
+                    da.Fill(ds, SheetSet[i - 1]);
+                    da.Dispose();
+                }
+                conn.Close();
+                conn.Dispose();
+            }
+            return ds;
+        }
+
+        /// <summary>
+        /// 把DataTable导出到EXCEL
+        /// </summary>
+        /// <param name="reportName">报表名称</param>
+        /// <param name="dt">数据源表</param>
+        /// <param name="saveFileName">Excel全路径(物理路径)文件名</param>
+        /// <returns>导出是否成功</returns>
+        public bool SubExportExcel(string reportName, System.Data.DataTable dt, string saveFileName)
+        {
+            if (dt == null)
+            {
+                _ReturnStatus = -1;
+                _ReturnMessage = "数据集为空！";
+                return false;
+            }
+            bool fileSaved = false;
+
+            //保存文件
+            if (saveFileName != "")
+            {
+                DateTime Process_BeforeTime = DateTime.Now;
+                Excel.Application xlApp = new Excel.ApplicationClass();
+                DateTime Process_AfterTime = DateTime.Now;
+                if (xlApp == null)
+                {
+                    _ReturnStatus = -1;
+                    _ReturnMessage = "无法创建Excel对象，可能您的计算机未安装Excel";
+                    return false;
+                }
+
+                Excel.Workbooks workbooks = xlApp.Workbooks;
+                Excel.Workbook workbook = workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1];//取得sheet1
+                Excel.Range range;
+
+                worksheet.Cells.Font.Size = 10;
+
+                long totalCount = dt.Rows.Count;
+                long rowRead = 0;
+                float percent = 0;
+
+                worksheet.Cells.NumberFormatLocal = "@";
+                worksheet.Cells[1, 1] = reportName;
+                ((Excel.Range)worksheet.Cells[1, 1]).Font.Size = 12;
+                ((Excel.Range)worksheet.Cells[1, 1]).Font.Bold = true;
+
+                //写入字段
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    worksheet.Cells[2, i + 1] = dt.Columns[i].ColumnName;
+                    range = (Excel.Range)worksheet.Cells[2, i + 1];
+                    range.Interior.ColorIndex = 15;
+                    range.Font.Bold = true;
+
+                }
+                //写入数值
+                for (int r = 0; r < dt.Rows.Count; r++)
+                {
+                    for (int i = 0; i < dt.Columns.Count; i++)
+                    {
+                        worksheet.Cells[r + 3, i + 1] = dt.Rows[r][i].ToString();
+                    }
+                    rowRead++;
+                    percent = ((float)(100 * rowRead)) / totalCount;
+                }
+
+                range = worksheet.get_Range(worksheet.Cells[2, 1], worksheet.Cells[dt.Rows.Count + 2, dt.Columns.Count]);
+                range.BorderAround(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThin, Excel.XlColorIndex.xlColorIndexAutomatic, null);
+
+                if (dt.Rows.Count > 0)
+                {
+                    range.Borders[Excel.XlBordersIndex.xlInsideHorizontal].ColorIndex = Excel.XlColorIndex.xlColorIndexAutomatic;
+                    range.Borders[Excel.XlBordersIndex.xlInsideHorizontal].LineStyle = Excel.XlLineStyle.xlContinuous;
+                    range.Borders[Excel.XlBordersIndex.xlInsideHorizontal].Weight = Excel.XlBorderWeight.xlThin;
+                }
+
+                if (dt.Columns.Count > 1)
+                {
+                    range.Borders[Excel.XlBordersIndex.xlInsideVertical].ColorIndex = Excel.XlColorIndex.xlColorIndexAutomatic;
+                    range.Borders[Excel.XlBordersIndex.xlInsideVertical].LineStyle = Excel.XlLineStyle.xlContinuous;
+                    range.Borders[Excel.XlBordersIndex.xlInsideVertical].Weight = Excel.XlBorderWeight.xlThin;
+                }
+
+                try
+                {
+                    workbook.Saved = true;
+                    workbook.SaveCopyAs(saveFileName);
+                    fileSaved = true;
+                }
+                catch (Exception ex)
+                {
+                    fileSaved = false;
+                    _ReturnStatus = -1;
+                    _ReturnMessage = "导出文件时出错,文件可能正被打开！\n" + ex.Message;
+                }
+                finally
+                {
+                    //释放Excel对应的对象
+                    workbook.Close(Type.Missing, Type.Missing, Type.Missing);
+
+                    if (xlApp != null)
+                    {
+                        xlApp.Application.Quit();
+                        xlApp.Quit();
+                    }
+
+
+                    if (workbook != null)
+                    {
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                        workbook = null;
+                    }
+
+                    if (workbooks != null)
+                    {
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(workbooks);
+                        workbooks = null;
+                    }
+
+                    if (xlApp != null)
+                    {
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+                        xlApp = null;
+                    }
+
+                    KillExcelProcess(Process_BeforeTime, Process_AfterTime);
+
+                    GC.Collect();
+                }
+            }
+            else
+            {
+                fileSaved = false;
+            }
+
+            return fileSaved;
+        }
+        //
+        //		public static void KillExcelProcess()
+        //		{
+        //			System.Diagnostics.Process[] excelProcess = System.Diagnostics.Process.GetProcessesByName("Excel");
+        //
+        //			foreach(System.Diagnostics.Process process in excelProcess)
+        //			{
+        //				if (process != null)
+        //				{   
+        //					process.Kill();
+        //				}
+        //			}
+        //		}
+
+        public bool ExportExcel(string reportName, System.Data.DataTable dt, string saveFileName)
+        {
+            bool flag = false;
+            if (SubExportExcel(reportName, dt, saveFileName))
+            {
+                flag = true;
+            }
+            else
+            {
+                flag = false;
+            }
+            GC.Collect();
+            return flag;
+        }
+
+        public DataSet ImportExcel(string fileName)
+        {
+            DataSet ds = SubImportExcel(fileName);
+            GC.Collect();
+            return ds;
+        }
+
+        /// <summary>
+        /// 关闭当前Excel进程 
+        /// </summary>
+        /// <param name="Process_BeforeTime"></param>
+        /// <param name="Process_AfterTime"></param>
+        public static void KillExcelProcess(DateTime Process_BeforeTime, DateTime Process_AfterTime)
+        {
+            foreach (Process pro in System.Diagnostics.Process.GetProcessesByName("EXCEL"))
+            {
+                DateTime ProcessBeginTime = pro.StartTime;
+                if ((ProcessBeginTime >= Process_BeforeTime) && (ProcessBeginTime <= Process_AfterTime))
+                {
+                    pro.Kill();
+                }
+            }
+        }
+
+        //        //关闭当前Excel进程
+        //
+        //        [DllImport("User32.dll",   CharSet   =   CharSet.Auto)]   
+        //        public static extern int GetWindowThreadProcessId(IntPtr hwnd,out int ID);
+        //        public static void Kill(Excel.Application excel)
+        //        {   
+        //            IntPtr t=new IntPtr(excel.Hwnd);   //得到这个句柄，具体作用是得到这块内存入口 
+        //            IntPtr tt=new IntPtr(excel.Hwnd);
+        //            int k= 0;
+        //           
+        //            int res=GetWindowThreadProcessId(t,out k);
+        //                //得到本进程唯一标志k
+        //            System.Diagnostics.Process p=System.Diagnostics.Process.GetProcessById(res);   //得到对进程k的引用
+        //            p.Kill();     //关闭进程k
+        //        }
+
+
+        /// <summary>
+        /// 在当前工作表中根据数据生成图表:CreateChart(m_Book, m_Sheet, num); 
+        /// </summary>
+        /// <param name="m_Book"></param>
+        /// <param name="m_Sheet"></param>
+        /// <param name="num"></param>
+        //private void CreateChart(Excel._Workbook m_Book, Excel._Worksheet m_Sheet, Excel.Range oResizeRange)
+        private void CreateChart(Excel._Workbook m_Book, Excel._Worksheet m_Sheet, int num)
+        {
+            Excel.Range oResizeRange;
+            Excel.Series oSeries;
+            m_Book.Charts.Add(Missing.Value, Missing.Value, 1, Missing.Value);
+
+            m_Book.ActiveChart.ChartType = Excel.XlChartType.xlLine;//设置图形
+
+            //设置数据取值范围
+            m_Book.ActiveChart.SetSourceData(m_Sheet.get_Range("A3", "C" + (num + 1).ToString()), Excel.XlRowCol.xlColumns);
+            //m_Book.ActiveChart.Location(Excel.XlChartLocation.xlLocationAutomatic, title);
+            //以下是给图表放在指定位置
+            m_Book.ActiveChart.Location(Excel.XlChartLocation.xlLocationAsObject, m_Sheet.Name);
+            oResizeRange = (Excel.Range)m_Sheet.Rows.get_Item(10, Missing.Value);
+            m_Sheet.Shapes.Item(0).Top = (float)(double)oResizeRange.Top;  //调图表的位置上边距
+            oResizeRange = (Excel.Range)m_Sheet.Columns.get_Item(6, Missing.Value);  //调图表的位置左边距
+            // m_Sheet.Shapes.Item(0).Left = (float)(double)oResizeRange.Left;
+            if (num <= 30)
+            {
+                m_Sheet.Shapes.Item(0).Width = 600;
+            }
+            else
+            {
+                m_Sheet.Shapes.Item(0).Width = 20 * num;   //调图表的宽度
+            }
+            m_Sheet.Shapes.Item(0).Height = 250;  //调图表的高度
+
+            m_Book.ActiveChart.PlotArea.Interior.ColorIndex = 19;  //设置绘图区的背景色 
+            m_Book.ActiveChart.PlotArea.Border.LineStyle = Excel.XlLineStyle.xlLineStyleNone;//设置绘图区边框线条
+            if (num <= 30)
+            {
+                m_Book.ActiveChart.PlotArea.Width = 600;
+            }
+            else
+            {
+                m_Book.ActiveChart.PlotArea.Width = 20 * num;   //设置绘图区宽度
+            }
+            //m_Book.ActiveChart.ChartArea.Interior.ColorIndex = 10; //设置整个图表的背影颜色
+            //m_Book.ActiveChart.ChartArea.Border.ColorIndex = 8;// 设置整个图表的边框颜色
+            m_Book.ActiveChart.ChartArea.Border.LineStyle = Excel.XlLineStyle.xlLineStyleNone;//设置边框线条
+            m_Book.ActiveChart.HasDataTable = false;
+
+            //设置Legend图例的位置和格式
+            m_Book.ActiveChart.Legend.Top = 20.00; //具体设置图例的上边距
+            m_Book.ActiveChart.Legend.Left = 60.00;//具体设置图例的左边距
+            m_Book.ActiveChart.Legend.Interior.ColorIndex = Excel.XlColorIndex.xlColorIndexNone;
+            m_Book.ActiveChart.Legend.Width = 150;
+            m_Book.ActiveChart.Legend.Font.Size = 9.5;
+            //m_Book.ActiveChart.Legend.Font.Bold = true;
+            m_Book.ActiveChart.Legend.Font.Name = "宋体";
+            //m_Book.ActiveChart.Legend.Position = Excel.XlLegendPosition.xlLegendPositionTop;//设置图例的位置
+            m_Book.ActiveChart.Legend.Border.LineStyle = Excel.XlLineStyle.xlLineStyleNone;//设置图例边框线条
+
+            //设置X轴的显示
+            Excel.Axis xAxis = (Excel.Axis)m_Book.ActiveChart.Axes(Excel.XlAxisType.xlValue, Excel.XlAxisGroup.xlPrimary);
+            xAxis.MajorGridlines.Border.LineStyle = Excel.XlLineStyle.xlDot;
+            xAxis.MajorGridlines.Border.ColorIndex = 1;//gridLine横向线条的颜色
+            xAxis.HasTitle = false;
+            xAxis.TickLabels.Font.Name = "宋体";
+            xAxis.TickLabels.Font.Size = 9;
+
+            //            .NumberFormatLocal = "0_ "
+            //设置Y轴的显示
+            Excel.Axis yAxis = (Excel.Axis)m_Book.ActiveChart.Axes(Excel.XlAxisType.xlCategory, Excel.XlAxisGroup.xlPrimary);
+            yAxis.TickLabelSpacing = 30;
+            //yAxis.TickLabels.NumberFormat = "M月D日";
+            //yAxis.MaximumScaleIsAuto = true;
+            //yAxis.MinimumScaleIsAuto = true;
+
+            yAxis.TickLabels.Orientation = Excel.XlTickLabelOrientation.xlTickLabelOrientationHorizontal;//Y轴显示的方向,是水平还是垂直等
+            yAxis.TickLabels.Font.Size = 8;
+            yAxis.TickLabels.Font.Name = "宋体";
+            //m_Book.ActiveChart.Floor.Interior.ColorIndex = 8;  
+            /***以下是设置标题*****
+            m_Book.ActiveChart.HasTitle=true;
+            m_Book.ActiveChart.ChartTitle.Text = "净值指数";
+            m_Book.ActiveChart.ChartTitle.Shadow = true;
+            m_Book.ActiveChart.ChartTitle.Border.LineStyle = Excel.XlLineStyle.xlContinuous;
+            */
+            oSeries = (Excel.Series)m_Book.ActiveChart.SeriesCollection(1);
+            oSeries.Name = "在线数";
+            oSeries.Values = "='" + m_Sheet.Name + "'!$C$3:$C$" + (num + 1).ToString();
+            oSeries.XValues = "='" + m_Sheet.Name + "'!$A$3:$B$" + (num + 1).ToString();
+            oSeries.Border.ColorIndex = 45;
+            oSeries.Border.Weight = Excel.XlBorderWeight.xlThick;
+            //oSeries = (Excel.Series)m_Book.ActiveChart.SeriesCollection(2);
+            //oSeries.Border.ColorIndex = 9;
+            //oSeries.Border.Weight = Excel.XlBorderWeight.xlThick;
+
+        }
+        public static ArrayList alColumn()
+        {
+            ArrayList al = new ArrayList();
+            al.Add("A");
+            al.Add("B");
+            al.Add("C");
+            al.Add("D");
+            al.Add("E");
+            al.Add("F");
+            al.Add("G");
+            al.Add("H");
+            al.Add("I");
+            al.Add("J");
+            al.Add("K");
+            al.Add("L");
+            al.Add("M");
+            al.Add("N");
+            al.Add("O");
+            al.Add("P");
+            al.Add("Q");
+            al.Add("R");
+            al.Add("S");
+            al.Add("T");
+            al.Add("U");
+            al.Add("V");
+            al.Add("W");
+            al.Add("X");
+            al.Add("Y");
+            al.Add("Z");
+            al.Add("AA");
+            al.Add("AB");
+            al.Add("AC");
+            al.Add("AD");
+            al.Add("AE");
+            al.Add("AF");
+            al.Add("AG");
+            al.Add("AH");
+            al.Add("AI");
+            al.Add("AJ");
+            al.Add("AK");
+            al.Add("AL");
+            al.Add("AM");
+            al.Add("AN");
+            al.Add("AO");
+            al.Add("AP");
+            al.Add("AQ");
+            al.Add("AR");
+            al.Add("AS");
+            al.Add("AT");
+            al.Add("AU");
+            al.Add("AV");
+            al.Add("AW");
+            al.Add("AX");
+            al.Add("AY");
+            al.Add("AZ");
+            return al;
+        }
+    }
+}

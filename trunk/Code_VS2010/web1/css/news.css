@@ -1,0 +1,89 @@
+#shadow {
+	width:100%;
+	float:left;
+	position:relative;
+	top:12px;
+}
+#page {
+	width:980px;
+	margin:auto;
+}
+#header {
+	height:244px;
+	width:870px;
+	position:relative;
+}
+#header h1 {
+	float:left;
+	font-size:30px;
+	color:#fff;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	line-height:55px;
+	margin:70px 0px 0px 70px;
+	padding:0;
+}
+#header h1 span{
+	font-size:20px;
+	color:#fff;
+	font-weight:normal;
+	font-family:Arial;
+	line-height:55px;
+	padding-left:13px;
+}
+#content {
+	margin:auto;
+	width:840px;
+	position:relative;
+	top:0px;
+	padding:0px 70px;
+	background:url(../images/content_bg.png) left top repeat;
+}
+#content h3 {
+	font-size:30px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	margin:0px;
+	padding:0px;
+	line-height:150%;
+	font-weight:bold;
+}
+#strip #menu li.about-us a {
+	background: url('../images/menu_bg_hover2.png') no-repeat top center;
+	color:#fff;
+}
+#strip #menu li.about-us ul li a {
+	background:none;
+}
+#strip #menu li.about-us ul li.news a {
+	background: url('../images/menu_sub_bg_hover.png') no-repeat;
+	color:#fff;
+}
+ul,li{ margin:0px; padding:0px; list-style:none;}
+
+
+#content h3{line-height:20px!important; font-size:20px!important; padding-bottom:5px;}
+#content p{ margin:0px; padding:9px 0px 9px;}
+
+
+
+.news_list{ width:840px; clear:both; zoom:1; overflow:hidden;}
+.news_list li{ padding:20px 0px; zoom:1; overflow:hidden; border-bottom:1px solid #393939;}
+.news_list li .pic{ float:left; width:297px; height:174px; overflow:hidden;}
+.news_list li .txt{ float:right; width:543px; overflow:hidden;}
+.news_list li .txt h3 a{ text-decoration:none;}
+/*.news_list li .txt p{ height:118px;}*/
+.news_list li .txt .newsDesc{ height:118px;}
+.news_list li .other a,.news_list li .other a:hover{ float:left; text-decoration:none; font-size:12px;}
+.news_list li .other span{ float:right; padding-left:20px; font-size:12px;}
+.news_list li.last{ border-bottom:0px;}
+
+
+.news_content{ clear:both; padding-top:20px; zoom:1; overflow:hidden;}
+.news_content h2{ text-align:center; font-size:20px!important;}
+.news_content .tac{ line-height:20px;}
+.news_nav{ text-align:center; position:relative; padding:50px 0px;}
+.news_nav a{ font-size:12px; text-decoration:none;}
+.news_nav .back{ position:absolute; right:0px;}
