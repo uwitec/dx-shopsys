@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="dianxin_Admin" EntityType="DBModel.Store.dianxin_Admin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_City" EntityType="DBModel.Store.dianxin_City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_Color" EntityType="DBModel.Store.dianxin_Color" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_jiameng" EntityType="DBModel.Store.dianxin_jiameng" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_lb" EntityType="DBModel.Store.dianxin_lb" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_Members" EntityType="DBModel.Store.dianxin_Members" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_News" EntityType="DBModel.Store.dianxin_News" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_ProductImgType" EntityType="DBModel.Store.dianxin_ProductImgType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_Province" EntityType="DBModel.Store.dianxin_Province" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_wallpaper" EntityType="DBModel.Store.dianxin_wallpaper" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="dianxin_wallpaperSize" EntityType="DBModel.Store.dianxin_wallpaperSize" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="DBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="dianxin_Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="pwd" Type="varchar" MaxLength="50" />
+          <Property Name="parentid" Type="int" />
+          <Property Name="role" Type="varchar" />
+          <Property Name="addTime" Type="datetime" />
+          <Property Name="isAdmin" Type="int" />
+        </EntityType>
+        <EntityType Name="dianxin_City">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="Pid" Type="int" />
+        </EntityType>
+        <EntityType Name="dianxin_Color">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ColorName" Type="varchar" MaxLength="50" />
+          <Property Name="colorValue" Type="varchar" MaxLength="50" />
+          <Property Name="OrderId" Type="int" />
+        </EntityType>
+        <EntityType Name="dianxin_jiameng">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="xingming" Type="varchar" MaxLength="50" />
+          <Property Name="xingbie" Type="varchar" MaxLength="50" />
+          <Property Name="cynx" Type="varchar" MaxLength="50" />
+          <Property Name="tel" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="sheng" Type="varchar" MaxLength="50" />
+          <Property Name="shi" Type="varchar" MaxLength="50" />
+          <Property Name="message" Type="varchar" />
+          <Property Name="reason" Type="varchar" />
+          <Property Name="AddTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="dianxin_lb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lbid" Type="int" Nullable="false" />
+          <Property Name="lbname" Type="varchar" MaxLength="50" />
+          <Property Name="parentid" Type="int" />
+          <Property Name="orderid" Type="int" />
+          <Property Name="path" Type="varchar" MaxLength="200" />
+          <Property Name="isDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="dianxin_Members">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="pwd" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="RegTime" Type="datetime" />
+          <Property Name="photo" Type="varchar" MaxLength="500" />
+          <Property Name="sex" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="dianxin_News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NewsID" Type="int" />
+          <Property Name="Title" Type="varchar" MaxLength="200" />
+          <Property Name="lbid" Type="int" />
+          <Property Name="pro_bianhao" Type="varchar" MaxLength="500" />
+          <Property Name="pro_mianliao" Type="varchar" MaxLength="500" />
+          <Property Name="pro_imgTypeid" Type="int" />
+          <Property Name="pro_function" Type="varchar" MaxLength="1000" />
+          <Property Name="ColorId" Type="int" />
+          <Property Name="NewsYear" Type="varchar" MaxLength="50" />
+          <Property Name="NewsFrom" Type="varchar" MaxLength="500" />
+          <Property Name="Description" Type="varchar" MaxLength="800" />
+          <Property Name="NewsBody" Type="ntext" />
+          <Property Name="Click" Type="int" />
+          <Property Name="pic" Type="varchar" MaxLength="1000" />
+          <Property Name="picSmall" Type="varchar" MaxLength="200" />
+          <Property Name="picname" Type="varchar" MaxLength="50" />
+          <Property Name="VideoType" Type="int" />
+          <Property Name="VideoUrl" Type="varchar" MaxLength="100" />
+          <Property Name="VideoFile" Type="varchar" MaxLength="100" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="Creator" Type="varchar" MaxLength="100" />
+          <Property Name="EditTime" Type="datetime" />
+          <Property Name="Editor" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="Tel" Type="varchar" MaxLength="500" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="jobDepartment" Type="varchar" MaxLength="100" />
+          <Property Name="jobAmount" Type="int" />
+          <Property Name="isActive" Type="int" />
+          <Property Name="jobStartDate" Type="datetime" />
+          <Property Name="jobEndDate" Type="datetime" />
+          <Property Name="isTop" Type="int" />
+          <Property Name="ParentNewsID" Type="int" />
+          <Property Name="NewsTypeID" Type="int" />
+          <Property Name="operateTime" Type="datetime" />
+          <Property Name="EditReason" Type="varchar" MaxLength="500" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="provinceid" Type="int" />
+          <Property Name="cityid" Type="int" />
+          <Property Name="orderid" Type="int" />
+          <Property Name="CourseTime" Type="varchar" MaxLength="50" />
+          <Property Name="isIndex" Type="int" />
+          <Property Name="SeoDESC" Type="varchar" MaxLength="500" />
+          <Property Name="SeoKey" Type="varchar" MaxLength="500" />
+          <Property Name="NewsGUID" Type="varchar" MaxLength="50" />
+          <Property Name="href" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="dianxin_ProductImgType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="imgTypeName" Type="varchar" MaxLength="50" />
+          <Property Name="OrderId" Type="int" />
+        </EntityType>
+        <EntityType Name="dianxin_Province">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="JianCheng" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="dianxin_wallpaper">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="pic" Type="varchar" MaxLength="100" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="sizeid" Type="int" />
+          <Property Name="NewsID" Type="int" />
+          <Property Name="NewsGUID" Type="varchar" MaxLength="50" />
+          <Property Name="isSmallPic" Type="int" />
+        </EntityType>
+        <EntityType Name="dianxin_wallpaperSize">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Size" Type="varchar" MaxLength="50" />
+          <Property Name="OrderID" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dianxin_Admin" EntityType="DBModel.dianxin_Admin" />
+          <EntitySet Name="dianxin_City" EntityType="DBModel.dianxin_City" />
+          <EntitySet Name="dianxin_Color" EntityType="DBModel.dianxin_Color" />
+          <EntitySet Name="dianxin_jiameng" EntityType="DBModel.dianxin_jiameng" />
+          <EntitySet Name="dianxin_lb" EntityType="DBModel.dianxin_lb" />
+          <EntitySet Name="dianxin_Members" EntityType="DBModel.dianxin_Members" />
+          <EntitySet Name="dianxin_News" EntityType="DBModel.dianxin_News" />
+          <EntitySet Name="dianxin_ProductImgType" EntityType="DBModel.dianxin_ProductImgType" />
+          <EntitySet Name="dianxin_Province" EntityType="DBModel.dianxin_Province" />
+          <EntitySet Name="dianxin_wallpaper" EntityType="DBModel.dianxin_wallpaper" />
+          <EntitySet Name="dianxin_wallpaperSize" EntityType="DBModel.dianxin_wallpaperSize" />
+          <EntitySet Name="sysdiagrams" EntityType="DBModel.sysdiagrams" />
+        </EntityContainer>
+        <EntityType Name="dianxin_Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="pwd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="parentid" Type="Int32" />
+          <Property Name="role" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+          <Property Name="addTime" Type="DateTime" />
+          <Property Name="isAdmin" Type="Int32" />
+        </EntityType>
+        <EntityType Name="dianxin_City">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="Pid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="dianxin_Color">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ColorName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="colorValue" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrderId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="dianxin_jiameng">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xingming" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="xingbie" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="cynx" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="sheng" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="shi" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="message" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+          <Property Name="reason" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="dianxin_lb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lbid" Type="Int32" Nullable="false" />
+          <Property Name="lbname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="parentid" Type="Int32" />
+          <Property Name="orderid" Type="Int32" />
+          <Property Name="path" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="isDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="dianxin_Members">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="pwd" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="RegTime" Type="DateTime" />
+          <Property Name="photo" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="dianxin_News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NewsID" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="lbid" Type="Int32" />
+          <Property Name="pro_bianhao" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="pro_mianliao" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="pro_imgTypeid" Type="Int32" />
+          <Property Name="pro_function" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="ColorId" Type="Int32" />
+          <Property Name="NewsYear" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NewsFrom" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="800" Unicode="false" FixedLength="false" />
+          <Property Name="NewsBody" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Click" Type="Int32" />
+          <Property Name="pic" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="picSmall" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="picname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VideoType" Type="Int32" />
+          <Property Name="VideoUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VideoFile" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" />
+          <Property Name="Creator" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EditTime" Type="DateTime" />
+          <Property Name="Editor" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Tel" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="jobDepartment" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="jobAmount" Type="Int32" />
+          <Property Name="isActive" Type="Int32" />
+          <Property Name="jobStartDate" Type="DateTime" />
+          <Property Name="jobEndDate" Type="DateTime" />
+          <Property Name="isTop" Type="Int32" />
+          <Property Name="ParentNewsID" Type="Int32" />
+          <Property Name="NewsTypeID" Type="Int32" />
+          <Property Name="operateTime" Type="DateTime" />
+          <Property Name="EditReason" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="provinceid" Type="Int32" />
+          <Property Name="cityid" Type="Int32" />
+          <Property Name="orderid" Type="Int32" />
+          <Property Name="CourseTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isIndex" Type="Int32" />
+          <Property Name="SeoDESC" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="SeoKey" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="NewsGUID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="href" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="dianxin_ProductImgType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imgTypeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrderId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="dianxin_Province">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="JianCheng" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="dianxin_wallpaper">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pic" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="AddTime" Type="DateTime" />
+          <Property Name="sizeid" Type="Int32" />
+          <Property Name="NewsID" Type="Int32" />
+          <Property Name="NewsGUID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="isSmallPic" Type="Int32" />
+        </EntityType>
+        <EntityType Name="dianxin_wallpaperSize">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Size" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OrderID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="dianxin_Admin"><EntityTypeMapping TypeName="DBModel.dianxin_Admin"><MappingFragment StoreEntitySet="dianxin_Admin">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="username" ColumnName="username" />
+            <ScalarProperty Name="pwd" ColumnName="pwd" />
+            <ScalarProperty Name="parentid" ColumnName="parentid" />
+            <ScalarProperty Name="role" ColumnName="role" />
+            <ScalarProperty Name="addTime" ColumnName="addTime" />
+            <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_City"><EntityTypeMapping TypeName="DBModel.dianxin_City"><MappingFragment StoreEntitySet="dianxin_City">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="Pid" ColumnName="Pid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_Color"><EntityTypeMapping TypeName="DBModel.dianxin_Color"><MappingFragment StoreEntitySet="dianxin_Color">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+            <ScalarProperty Name="colorValue" ColumnName="colorValue" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_jiameng"><EntityTypeMapping TypeName="DBModel.dianxin_jiameng"><MappingFragment StoreEntitySet="dianxin_jiameng">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="xingming" ColumnName="xingming" />
+            <ScalarProperty Name="xingbie" ColumnName="xingbie" />
+            <ScalarProperty Name="cynx" ColumnName="cynx" />
+            <ScalarProperty Name="tel" ColumnName="tel" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="sheng" ColumnName="sheng" />
+            <ScalarProperty Name="shi" ColumnName="shi" />
+            <ScalarProperty Name="message" ColumnName="message" />
+            <ScalarProperty Name="reason" ColumnName="reason" />
+            <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_lb"><EntityTypeMapping TypeName="DBModel.dianxin_lb"><MappingFragment StoreEntitySet="dianxin_lb">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="lbid" ColumnName="lbid" />
+            <ScalarProperty Name="lbname" ColumnName="lbname" />
+            <ScalarProperty Name="parentid" ColumnName="parentid" />
+            <ScalarProperty Name="orderid" ColumnName="orderid" />
+            <ScalarProperty Name="path" ColumnName="path" />
+            <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_Members"><EntityTypeMapping TypeName="DBModel.dianxin_Members"><MappingFragment StoreEntitySet="dianxin_Members">
+            <ScalarProperty Name="userid" ColumnName="userid" />
+            <ScalarProperty Name="username" ColumnName="username" />
+            <ScalarProperty Name="pwd" ColumnName="pwd" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+            <ScalarProperty Name="photo" ColumnName="photo" />
+            <ScalarProperty Name="sex" ColumnName="sex" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_News"><EntityTypeMapping TypeName="DBModel.dianxin_News"><MappingFragment StoreEntitySet="dianxin_News">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="lbid" ColumnName="lbid" />
+            <ScalarProperty Name="pro_bianhao" ColumnName="pro_bianhao" />
+            <ScalarProperty Name="pro_mianliao" ColumnName="pro_mianliao" />
+            <ScalarProperty Name="pro_imgTypeid" ColumnName="pro_imgTypeid" />
+            <ScalarProperty Name="pro_function" ColumnName="pro_function" />
+            <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+            <ScalarProperty Name="NewsYear" ColumnName="NewsYear" />
+            <ScalarProperty Name="NewsFrom" ColumnName="NewsFrom" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="NewsBody" ColumnName="NewsBody" />
+            <ScalarProperty Name="Click" ColumnName="Click" />
+            <ScalarProperty Name="pic" ColumnName="pic" />
+            <ScalarProperty Name="picSmall" ColumnName="picSmall" />
+            <ScalarProperty Name="picname" ColumnName="picname" />
+            <ScalarProperty Name="VideoType" ColumnName="VideoType" />
+            <ScalarProperty Name="VideoUrl" ColumnName="VideoUrl" />
+            <ScalarProperty Name="VideoFile" ColumnName="VideoFile" />
+            <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+            <ScalarProperty Name="Creator" ColumnName="Creator" />
+            <ScalarProperty Name="EditTime" ColumnName="EditTime" />
+            <ScalarProperty Name="Editor" ColumnName="Editor" />
+            <ScalarProperty Name="Address" ColumnName="Address" />
+            <ScalarProperty Name="Tel" ColumnName="Tel" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="jobDepartment" ColumnName="jobDepartment" />
+            <ScalarProperty Name="jobAmount" ColumnName="jobAmount" />
+            <ScalarProperty Name="isActive" ColumnName="isActive" />
+            <ScalarProperty Name="jobStartDate" ColumnName="jobStartDate" />
+            <ScalarProperty Name="jobEndDate" ColumnName="jobEndDate" />
+            <ScalarProperty Name="isTop" ColumnName="isTop" />
+            <ScalarProperty Name="ParentNewsID" ColumnName="ParentNewsID" />
+            <ScalarProperty Name="NewsTypeID" ColumnName="NewsTypeID" />
+            <ScalarProperty Name="operateTime" ColumnName="operateTime" />
+            <ScalarProperty Name="EditReason" ColumnName="EditReason" />
+            <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+            <ScalarProperty Name="provinceid" ColumnName="provinceid" />
+            <ScalarProperty Name="cityid" ColumnName="cityid" />
+            <ScalarProperty Name="orderid" ColumnName="orderid" />
+            <ScalarProperty Name="CourseTime" ColumnName="CourseTime" />
+            <ScalarProperty Name="isIndex" ColumnName="isIndex" />
+            <ScalarProperty Name="SeoDESC" ColumnName="SeoDESC" />
+            <ScalarProperty Name="SeoKey" ColumnName="SeoKey" />
+            <ScalarProperty Name="NewsGUID" ColumnName="NewsGUID" />
+            <ScalarProperty Name="href" ColumnName="href" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_ProductImgType"><EntityTypeMapping TypeName="DBModel.dianxin_ProductImgType"><MappingFragment StoreEntitySet="dianxin_ProductImgType">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="imgTypeName" ColumnName="imgTypeName" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_Province"><EntityTypeMapping TypeName="DBModel.dianxin_Province"><MappingFragment StoreEntitySet="dianxin_Province">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="JianCheng" ColumnName="JianCheng" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_wallpaper"><EntityTypeMapping TypeName="DBModel.dianxin_wallpaper"><MappingFragment StoreEntitySet="dianxin_wallpaper">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="pic" ColumnName="pic" />
+            <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+            <ScalarProperty Name="sizeid" ColumnName="sizeid" />
+            <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+            <ScalarProperty Name="NewsGUID" ColumnName="NewsGUID" />
+            <ScalarProperty Name="isSmallPic" ColumnName="isSmallPic" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="dianxin_wallpaperSize"><EntityTypeMapping TypeName="DBModel.dianxin_wallpaperSize"><MappingFragment StoreEntitySet="dianxin_wallpaperSize">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="Size" ColumnName="Size" />
+            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="DBModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DianxinModel">
+        <EntityTypeShape EntityType="DBModel.dianxin_Admin" Width="1.5" PointX="0.75" PointY="0.75" Height="2.3520719401041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_City" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7790128580729174" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_Color" Width="1.5" PointX="2.75" PointY="3.75" Height="1.779012858072917" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_jiameng" Width="1.5" PointX="4.75" PointY="0.75" Height="3.1161507161458335" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_lb" Width="1.5" PointX="4.75" PointY="4.75" Height="2.3520719401041656" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_Members" Width="1.5" PointX="6.75" PointY="0.75" Height="2.3520719401041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_News" Width="1.5" PointX="0.75" PointY="6.75" Height="9.9928597005208317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_ProductImgType" Width="1.5" PointX="6.75" PointY="4.75" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_Province" Width="1.5" PointX="6.75" PointY="7.75" Height="1.7790128580729174" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_wallpaper" Width="1.5" PointX="8.75" PointY="0.75" Height="2.3520719401041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.dianxin_wallpaperSize" Width="1.5" PointX="2.75" PointY="8.75" Height="1.5879931640625031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="4.75" Height="1.9700325520833317" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

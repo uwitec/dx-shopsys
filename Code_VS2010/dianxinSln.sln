@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web1", "web1\web1.csproj", "{DF2CF3EC-CEE9-468A-9F59-7E9C2E7E45E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{6D1375BA-6AA7-48D6-B8F6-C2E9262B2778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBFramework", "DBFramework\DBFramework.csproj", "{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DXWeb", "DXWeb\DXWeb.csproj", "{59ABA870-5C21-446D-BB39-4D76C0AB7FEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		GasDensity|Any CPU = GasDensity|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF2CF3EC-CEE9-468A-9F59-7E9C2E7E45E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF2CF3EC-CEE9-468A-9F59-7E9C2E7E45E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF2CF3EC-CEE9-468A-9F59-7E9C2E7E45E2}.GasDensity|Any CPU.ActiveCfg = Release|Any CPU
+		{DF2CF3EC-CEE9-468A-9F59-7E9C2E7E45E2}.GasDensity|Any CPU.Build.0 = Release|Any CPU
+		{DF2CF3EC-CEE9-468A-9F59-7E9C2E7E45E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF2CF3EC-CEE9-468A-9F59-7E9C2E7E45E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1375BA-6AA7-48D6-B8F6-C2E9262B2778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1375BA-6AA7-48D6-B8F6-C2E9262B2778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1375BA-6AA7-48D6-B8F6-C2E9262B2778}.GasDensity|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1375BA-6AA7-48D6-B8F6-C2E9262B2778}.GasDensity|Any CPU.Build.0 = Release|Any CPU
+		{6D1375BA-6AA7-48D6-B8F6-C2E9262B2778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1375BA-6AA7-48D6-B8F6-C2E9262B2778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}.GasDensity|Any CPU.ActiveCfg = GasDensity|Any CPU
+		{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}.GasDensity|Any CPU.Build.0 = GasDensity|Any CPU
+		{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59ABA870-5C21-446D-BB39-4D76C0AB7FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59ABA870-5C21-446D-BB39-4D76C0AB7FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59ABA870-5C21-446D-BB39-4D76C0AB7FEE}.GasDensity|Any CPU.ActiveCfg = Release|Any CPU
+		{59ABA870-5C21-446D-BB39-4D76C0AB7FEE}.GasDensity|Any CPU.Build.0 = Release|Any CPU
+		{59ABA870-5C21-446D-BB39-4D76C0AB7FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59ABA870-5C21-446D-BB39-4D76C0AB7FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

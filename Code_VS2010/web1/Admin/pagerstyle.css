@@ -1,0 +1,44 @@
+﻿img{border:0;}
+/* 24种分页样式复制粘贴开始（注意DiV.number a 等等名称不要变，只要复制内容即可）*/
+/* Mode 0,1,2 Style (Number) */
+DIV.number {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; MARGIN: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center
+}
+DIV.number a {
+	BORDER-RIGHT: #9aafe5 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #9aafe5 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; BORDER-LEFT: #9aafe5 1px solid; COLOR: #2e6ab1; MARGIN-RIGHT: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #9aafe5 1px solid; TEXT-DECORATION: none
+}
+DIV.number a:hover {
+	BORDER-RIGHT: #2b66a5 1px solid; BORDER-TOP: #2b66a5 1px solid; BORDER-LEFT: #2b66a5 1px solid; COLOR: #000; BORDER-BOTTOM: #2b66a5 1px solid; BACKGROUND-COLOR: #F4F4F4
+}
+DIV.number a:active {
+	BORDER-RIGHT: #2b66a5 1px solid; BORDER-TOP: #2b66a5 1px solid; BORDER-LEFT: #2b66a5 1px solid; COLOR: #000; BORDER-BOTTOM: #2b66a5 1px solid; BACKGROUND-COLOR: #F4F4F4
+}
+DIV.number span.current {
+	BORDER-RIGHT: #2b66a5 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #2b66a5 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; BORDER-LEFT: #2b66a5 1px solid; COLOR:Teal; MARGIN-RIGHT: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #2b66a5 1px solid; BACKGROUND-COLOR: #cee3e9
+}
+
+DIV.number span.disabled {
+	BORDER-RIGHT: #929292 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #929292 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; BORDER-LEFT: #929292 1px solid; COLOR: #929292; MARGIN-RIGHT: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #929292 1px solid
+}
+DIV.number span.disabledimg {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #eee 1px solid; COLOR: #ddd; PADDING-TOP: 2px; BORDER-BOTTOM: #eee 1px solid
+}
+
+/* Mode 5 Style (Input) */
+.inputtext
+{
+	background: #EEF3F7;
+    border: 1px solid #CCCCCC;
+    color: #000000;
+    font-size: 14px;
+	BORDER-RIGHT: #9aafe5 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #9aafe5 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; BORDER-LEFT: #9aafe5 1px solid; COLOR: #2e6ab1; MARGIN-RIGHT: 1px; PADDING-TOP: 2px; BORDER-BOTTOM: #9aafe5 1px solid; TEXT-DECORATION: none;width:50px;height:19px;vertical-align: middle;
+}
+.all{ background-image:url(images/all.gif);
+	background-position: 1px 1px;
+	background-repeat:no-repeat;
+	padding-left:20px;
+	height:15px;
+	width:30px;
+	font-size:12px; border:solid 1px #006699
+}
+.smallbutton{background-color: #cee3e9;BORDER-RIGHT: #2C59AA 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #2C59AA 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px;BORDER-LEFT: #2C59AA 1px solid; CURSOR: hand; COLOR: #2e6ab1; PADDING-TOP: 2px; BORDER-BOTTOM: #2C59AA 1px solid;width:30px;height:25px;vertical-align: middle;}

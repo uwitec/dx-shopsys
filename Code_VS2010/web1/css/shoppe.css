@@ -1,0 +1,79 @@
+#page {width:870px;margin:auto;}
+
+#header {height:55px;width:870px;}
+/*#content h1 {float:right;position:absolute;right:50px;top:0px;font-size:72px;color:#fff;text-transform:uppercase;font-weight:normal;font-family:"黑体","微软雅黑","宋体";line-height:55px;margin:50px 0px 0px 0px;padding:0;letter-spacing:-2px;} */
+
+#shadow{ background:none;}
+
+#content {
+	margin:auto;
+	width:840px;
+	position:relative;
+	top:0px;
+	padding:0px 70px;
+	background:url(../images/content_bg.png) left top repeat;
+}
+#content h1 {
+	font-size:30px;
+	color:#fff;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	margin:0px;
+	padding:0px;
+	line-height:150%;
+	padding-top:80px;
+	padding-bottom:35px;
+}
+#content h1 span{
+	font-size:20px;
+	color:#fff;
+	font-family:Arial;
+	margin:0px;
+	padding:0px;
+	line-height:150%;
+	padding-left:13px;
+}
+#content h3 {
+	font-size:20px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	margin:0px;
+	padding:0px;
+	line-height:150%;
+}
+
+
+#content .line {border-bottom:1px solid #414141;padding:30px 0px;float:left;width:870px;position:relative;}
+#content .line p {width:460px;float:left;margin:0;}
+#content .line h3 {float:left;width:460px;display:block;font-size:44px;color:#fff;text-transform:uppercase;font-weight:normal;font-family:"黑体","微软雅黑","宋体";margin:0px 0px;padding:0;}
+#content .line-l .img {float:left;width:365px;}
+#content .line-r .img {float:right;width:365px;text-align:right;}
+#content .last {border-bottom:0px;}
+#content .margin {margin:40px 0px;}
+
+#strip #menu li.Technology a {background: url('../images/menu_bg_hover2.png') no-repeat top center;color:#fff;}
+#strip #menu li.Technology ul li a {background:none;}
+#strip #menu li.Technology ul li.function a {background: url('../images/menu_sub_bg_hover.png') no-repeat;color:#fff;}
+
+ul,li{ margin:0px; padding:0px;}
+
+.shoppe1{}
+.shoppe1 ul{ zoom:1; overflow:hidden; padding-bottom:60px;}
+.shoppe1 li{ float:left; list-style:none; padding-right:15px; padding-bottom:15px; width:270px; height:153px; overflow:hidden;}
+.shoppe1 li.last{ padding-right:0px;}
+.shoppe2 div{ position:relative; height:742px; padding-top:18px;}
+.shoppe2 div img{ position:absolute;}
+.shoppe2 div img.shoppe2_1{ left:0px; top:0px;}
+.shoppe2 div img.shoppe2_2{ left:0px; top:511px;}
+.shoppe2 div img.shoppe2_3{ left:286px; top:511px;}
+.shoppe2 div img.shoppe2_4{ right:0px; top:511px;}
+
+.shoppe3{zoom:1; overflow:hidden;}
+.shoppe3 div{ position:relative; height:426px; margin-bottom:40px;}
+.shoppe3 div img{ position:absolute;}
+.shoppe3 div img.shoppe3_1{ left:0px; top:0px;}
+.shoppe3 div img.shoppe3_2{ right:0px; top:0px;}
+.shoppe3 div img.shoppe3_3{ right:0px; top:146px;}
+.shoppe3 div img.shoppe3_4{ right:0px; bottom:0px;}

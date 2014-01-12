@@ -1,0 +1,17 @@
+#shadow {width:100%;float:left;background:url('../images/history_shadow.jpg') no-repeat center top;position:relative;top:12px;}
+
+#page {width:870px;margin:auto;}
+
+#header {float:left;height:536px;width:870px;position:relative;}
+#header h1 {float:left;font-size:50px;color:#fff;/*text-transform:uppercase;*/font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";line-height:55px;margin:70px 0px 0px 0px;padding:0;/*letter-spacing:-2px;*/} 
+#header h1 span{ font-size:30px; display:block; line-height:34px; font-family:Arial;}
+  
+
+#content {margin:auto;width:870px;position:relative;top:0px;}
+#content h3 {float:left;width:870px;display:block;font-size:30px;color:#fff;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";margin:10px 0px;padding:0; font-weight:bold;}
+#content p {float:left;width:870px;}
+#content img {margin:7px 0px;}
+
+#strip #menu li.about-us a {background: url('../images/menu_bg_hover2.png') no-repeat top center;color:#fff;}
+#strip #menu li.about-us ul li a {background:none;}
+#strip #menu li.about-us ul li.history a {background: url('../images/menu_sub_bg_hover.png') no-repeat;color:#fff;}
