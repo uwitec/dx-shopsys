@@ -1,0 +1,24 @@
+
+#page {width:870px;margin:auto;}
+
+#header {float:left;height:520px;width:870px;position:relative;background:url('../images/ptx-ski_header.png') no-repeat center top;}
+#header h1 {float:left;width:310px;font-size:62px;color:#fff;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";line-height:55px;margin:50px 0px 0px 0px;padding:0;letter-spacing:-2px;} 
+#header h1 span { font-size:50px; position:relative; top:-4px; line-height:60px;}
+
+#sub-header .box {width:50%;float:left;margin:50px 0px 70px 0px;background:url('../images/ptx_box_shadow.png') no-repeat center 135px;}
+  
+#content {margin:auto;width:870px;position:relative;top:0px;}
+#content h3 {float:left;display:block;font-size:44px;color:#fff;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";margin:40px 0px 5px 10px;padding:0;}
+
+#content .line {border-bottom:1px solid #414141;padding:20px 0px;float:left;width:870px;position:relative;}
+#content .line p {width:520px;float:left;margin:0;}
+#content .line h3 {float:left;width:520px;display:block;font-size:44px;color:#fff;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";margin:10px 0px;padding:0;}
+#content .line-l .img {float:left;width:350px;}
+#content .line-l h3 {margin-top:80px;}
+#content .line-r .img {float:right;width:330px;text-align:right;}
+#content .line-r h3 {margin-top:40px;}
+#content .last {border-bottom:0px;}
+
+#strip #menu li.technology a {background: url('../images/menu_bg_hover2.png') no-repeat top center;color:#fff;}
+#strip #menu li.technology ul li a {background:none;}
+#strip #menu li.technology ul li.ptx-ski a {background: url('../images/menu_sub_bg_hover.png') no-repeat;color:#fff;}

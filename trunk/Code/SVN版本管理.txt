@@ -1,0 +1,29 @@
+
+
+管理地址：
+https://code.google.com/u/106925705323369038795/
+
+
+svn checkout https://dx-shopsys.googlecode.com/svn/trunk/ dx-shopsys --username guo2001china@gmail.com
+密码： ab6HF7ds9kW7
+
+
+
+
+
+共有四个项目：
+
+capitalistwebsite
+dx-shopsys
+my-project-capitalistweb
+web-upabc
+
+
+
+
+
+
+
+
+
+

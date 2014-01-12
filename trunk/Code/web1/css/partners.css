@@ -1,0 +1,15 @@
+body {color:#fff;font-family:'PT Sans', Verdana, Arial;}
+#shadow {width:100%;float:left;background:url('../images/partners_shadow.png') no-repeat center top;position:relative;top:12px;}
+
+#page {width:870px;margin:auto;}
+h1 {font-size:50px;color:#cebca5;padding:140px 0px 50px 0px;text-transform:uppercase;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/font-family:"黑体","微软雅黑","宋体";line-height:55px;letter-spacing:-2px;} 
+
+#content {margin-bottom:50px;}
+#content h2 {font-size:30px;color:#fff;padding:0px;margin:20px 0px 0px 0px;text-transform:uppercase;font-weight:normal;font-family:'din1451e', Verdana, Arial;letter-spacing:0px;}
+#content h3 {font-size:27px;color:#fff;padding:0px;margin:20px 0px 0px 0px;font-weight:normal;/*font-family:'din1451e', Verdana, Arial;*/letter-spacing:0px;}
+
+#content p {margin:0;padding:0px 100px 0px 0px;}
+#content table td {padding-right:10px;}
+
+#strip #menu li.network a {background: url('../images/menu_bg_hover2.png') no-repeat top center;color:#fff;}
+#strip #menu li.partners ul li a {background:none;}

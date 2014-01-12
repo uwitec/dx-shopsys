@@ -1,0 +1,95 @@
+#shadow {
+	width:100%;
+	float:left;
+	background:url('../images/olympics.jpg') no-repeat center top;
+	position:relative;
+	top:12px;
+}
+#page {
+	width:870px;
+	margin:auto;
+}
+#header {
+	height:582px;
+	width:870px;
+	position:relative;
+}
+#header h1 {
+	float:left;
+	font-size:72px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	line-height:55px;
+	margin:70px 0px 0px 0px;
+	padding:0;
+	letter-spacing:-2px;
+	text-indent:-999em;
+}
+#content {
+	margin:auto;
+	width:840px;
+	position:relative;
+	top:0px;
+	padding:0px 70px;
+	background:url(../images/content_bg.png) left top repeat;
+}
+#content h3 {
+	font-size:30px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	margin:0px;
+	padding:0px;
+	line-height:150%;
+}
+#content p {
+	line-height:20px;
+}
+#content img {
+}
+#content ul {
+	margin:0px;
+	padding:0px;
+	zoomz:1;
+	overflow:hidden;
+}
+/*#content td { vertical-align:top;}*/
+#content ul li {
+	list-style:none;
+	float:left;
+	width:271px;
+	padding-right:13px;
+	height:191px;
+	overflow:hidden;
+}
+#content ul li.last {
+	padding-right:0px;
+}
+.story1 {
+	border-bottom:1px solid #555555;
+	padding:50px 0px 50px;
+	margin-bottom:50px;
+}
+.line {
+	border-bottom:1px solid #555555;
+	height:30px;
+	margin-bottom:30px;
+	overflow:hidden;
+}
+#strip #menu li.olympics a {
+	background: url('../images/menu_bg_hover2.png') no-repeat top center;
+	color:#fff;
+}
+#strip #menu li.olympics ul li a {
+	background:none;
+}
+#strip #menu li.olympics ul li.olympics a {
+	background: url('../images/menu_sub_bg_hover.png') no-repeat;
+	color:#fff;
+}
+
+
+.tbl1 td{ line-height:22px; padding-bottom:6px;}

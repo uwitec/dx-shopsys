@@ -1,0 +1,159 @@
+BODY {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; BORDER-RIGHT-WIDTH: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 100%; BORDER-LEFT-WIDTH: 0px; PADDING-TOP: 0px
+}
+#contain {
+	POSITION: relative; PADDING-BOTTOM: 10px; BORDER-RIGHT-WIDTH: 0px; MARGIN: 10px auto; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 100%; BORDER-LEFT-WIDTH: 0px; PADDING-TOP: 10px
+}
+#content {
+	POSITION: relative; MARGIN: 10px auto
+}
+#bottom {
+	POSITION: relative; MARGIN: 0px auto
+}
+#top {
+	Z-INDEX: 99; POSITION: relative; MARGIN: 0px auto
+}
+#bodyex {
+	POSITION: absolute; MARGIN: 0px; TOP: 0px; LEFT: 0px
+}
+.pdv_class {
+	POSITION: absolute; BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+DIV {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+LI {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+TD {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+P {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+SELECT {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+INPUT {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+TEXTAREA {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+A {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+BUTTON {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+INPUT {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050; TEXT-DECORATION: none
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+A:link {
+	COLOR: #505050; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #505050; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #505050; TEXT-DECORATION: none
+}
+A.nomal:link {
+	COLOR: #505050; TEXT-DECORATION: underline
+}
+A.nomal:visited {
+	COLOR: #505050; TEXT-DECORATION: underline
+}
+A.nomal:active {
+	COLOR: #505050; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.input {
+	BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BACKGROUND: #f7f7f7; HEIGHT: 20px; COLOR: #555; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px
+}
+.textarea {
+	BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BACKGROUND: #f7f7f7; FONT-SIZE: 12px; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 3px
+}
+.button {
+	BORDER-BOTTOM: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BACKGROUND: #e8e8e8; HEIGHT: 22px; BORDER-TOP: #c0c0c0 1px solid; BORDER-RIGHT: #c0c0c0 1px solid; PADDING-TOP: 0px
+}
+.submit {
+	BORDER-BOTTOM: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; BACKGROUND: #e8e8e8; HEIGHT: 22px; BORDER-TOP: #c0c0c0 1px solid; BORDER-RIGHT: #c0c0c0 1px solid; PADDING-TOP: 0px
+}
+.mustfill {
+	COLOR: #ff0000
+}
+SELECT {
+	FONT: 12px Verdana, Arial, Helvetica, sans-serif; COLOR: #505050
+}
+.msgdiv {
+	PADDING-LEFT: 53px; BACKGROUND: url(../images/chk_msg.gif) no-repeat 30px 50%; COLOR: #336699
+}
+.errdiv {
+	PADDING-LEFT: 53px; BACKGROUND: url(../images/chk_error.gif) no-repeat 30px 50%; COLOR: #ff0000
+}
+.rightdiv {
+	PADDING-LEFT: 53px; BACKGROUND: url(../images/chk_right.gif) no-repeat 30px 50%; COLOR: #505050
+}
+.noticediv {
+	BORDER-BOTTOM: #fc5959 1px solid; BORDER-LEFT: #fc5959 1px solid; LINE-HEIGHT: 25px; MARGIN: 3px 0px; PADDING-LEFT: 33px; DISPLAY: none; BACKGROUND: url(../images/chk_error.gif) #fffdf4 no-repeat 10px 50%; BORDER-TOP: #fc5959 1px solid; BORDER-RIGHT: #fc5959 1px solid
+}
+.okdiv {
+	BORDER-BOTTOM: #fc5959 1px solid; BORDER-LEFT: #fc5959 1px solid; LINE-HEIGHT: 25px; MARGIN: 3px 0px; PADDING-LEFT: 33px; DISPLAY: none; BACKGROUND: url(../images/chk_right.gif) #fffdf4 no-repeat 10px 50%; BORDER-TOP: #fc5959 1px solid; BORDER-RIGHT: #fc5959 1px solid
+}
+.securenotice {
+	TEXT-ALIGN: center; LINE-HEIGHT: 100px; COLOR: #ff0000
+}
+DIV#alert {
+	DISPLAY: none; CURSOR: default
+}
+DIV#alert .border {
+	BORDER-BOTTOM: #97a0aa 1px solid; BORDER-LEFT: #97a0aa 1px solid; BORDER-TOP: #97a0aa 1px solid; BORDER-RIGHT: #97a0aa 1px solid
+}
+DIV#alert .ntc {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 30px; PADDING-LEFT: 30px; PADDING-RIGHT: 30px; FONT: 14px/1.6 Verdana, Arial, Helvetica, sans-serif; BACKGROUND: #fff; PADDING-TOP: 30px
+}
+DIV#alert .buttonzone {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 15px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #f7f7f7; PADDING-TOP: 15px
+}
+DIV#alert .topBar {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 5px; LINE-HEIGHT: 20px; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; BACKGROUND: #cbddef; HEIGHT: 20px; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+DIV#alert .topBar .pwClose {
+	POSITION: absolute; WIDTH: 45px; BACKGROUND: url(../images/pwin3.gif) no-repeat; HEIGHT: 18px; TOP: 0px; CURSOR: pointer; RIGHT: 8px
+}
+DIV#alert .button {
+	BORDER-BOTTOM: #97a0aa 1px solid; BORDER-LEFT: #97a0aa 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BACKGROUND: #eee; HEIGHT: 22px; BORDER-TOP: #97a0aa 1px solid; BORDER-RIGHT: #97a0aa 1px solid; PADDING-TOP: 0px
+}
+#frmWindow {
+	DISPLAY: none; CURSOR: default
+}
+#frmWindow .border {
+	BORDER-BOTTOM: #97a0aa 1px solid; BORDER-LEFT: #97a0aa 1px solid; BORDER-TOP: #97a0aa 1px solid; BORDER-RIGHT: #97a0aa 1px solid
+}
+#frmWindow .ntc {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 30px; PADDING-LEFT: 30px; PADDING-RIGHT: 30px; FONT: 12px/1.6 Verdana, Arial, Helvetica, sans-serif; BACKGROUND: #fff; PADDING-TOP: 30px
+}
+#frmWindow .buttonzone {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 15px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #f7f7f7; PADDING-TOP: 10px
+}
+#frmWindow .Frm {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 100%; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 500px; BORDER-LEFT-WIDTH: 0px
+}
+#frmWindow .windowcontent {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 100%; BACKGROUND: #fff; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 380px; OVERFLOW: auto; BORDER-LEFT-WIDTH: 0px
+}
+#frmWindow .topBar {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 5px; LINE-HEIGHT: 20px; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; BACKGROUND: #cbddef; HEIGHT: 20px; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+#frmWindow .topBar .pwClose {
+	POSITION: absolute; WIDTH: 45px; BACKGROUND: url(../images/pwin3.gif) no-repeat; HEIGHT: 18px; TOP: 0px; CURSOR: pointer; RIGHT: 8px
+}

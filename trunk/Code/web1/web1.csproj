@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF2CF3EC-CEE9-468A-9F59-7E9C2E7E45E2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>web1</RootNamespace>
+    <AssemblyName>web1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FredCK.FCKeditorV2">
+      <HintPath>..\lib\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NetDimension.Weibo">
+      <HintPath>..\lib\NetDimension.Weibo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="UcfarPager">
+      <HintPath>..\lib\UcfarPager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1_文件说明.txt" />
+    <Content Include="Admin\admin.aspx" />
+    <Content Include="Admin\AdminAdd.aspx" />
+    <Content Include="Admin\AdminEdit.aspx" />
+    <Content Include="Admin\AiMianXingDongMng.aspx" />
+    <Content Include="Admin\CityManage.aspx" />
+    <Content Include="Admin\ColorManage.aspx" />
+    <Content Include="Admin\execSql.aspx" />
+    <Content Include="Admin\FriendLink.aspx" />
+    <Content Include="Admin\Header.aspx" />
+    <Content Include="Admin\IconManage.aspx" />
+    <Content Include="Admin\images\admin.css" />
+    <Content Include="Admin\images\admin_p.gif" />
+    <Content Include="Admin\images\all.gif" />
+    <Content Include="Admin\images\bt_login.gif" />
+    <Content Include="Admin\images\Button_End.gif" />
+    <Content Include="Admin\images\Button_First.gif" />
+    <Content Include="Admin\images\Button_Next.gif" />
+    <Content Include="Admin\images\Button_Prev.gif" />
+    <Content Include="Admin\images\code.gif" />
+    <Content Include="Admin\images\error.gif" />
+    <Content Include="Admin\images\header_bg.jpg" />
+    <Content Include="Admin\images\header_left.jpg" />
+    <Content Include="Admin\images\header_right.jpg" />
+    <Content Include="Admin\images\img3.gif" />
+    <Content Include="Admin\images\img4.gif" />
+    <Content Include="Admin\images\login_1.jpg" />
+    <Content Include="Admin\images\login_2.jpg" />
+    <Content Include="Admin\images\login_3.jpg" />
+    <Content Include="Admin\images\login_4.jpg" />
+    <Content Include="Admin\images\login_5.jpg" />
+    <Content Include="Admin\images\login_6.gif" />
+    <Content Include="Admin\images\menu_bg.jpg" />
+    <Content Include="Admin\images\menu_bt.jpg" />
+    <Content Include="Admin\images\menu_icon.gif" />
+    <Content Include="Admin\images\page_white_add.png" />
+    <Content Include="Admin\images\shadow_bg.jpg" />
+    <Content Include="Admin\images\thBack.gif" />
+    <Content Include="Admin\images\title_bg1.jpg" />
+    <Content Include="Admin\images\title_bg2.jpg" />
+    <Content Include="Admin\images\toobig.gif" />
+    <Content Include="Admin\images\uploadlimit.gif" />
+    <Content Include="Admin\images\XPButtonNoText_160x22.png" />
+    <Content Include="Admin\images\zerobyte.gif" />
+    <Content Include="Admin\jiameng.aspx" />
+    <Content Include="Admin\LbManage.aspx" />
+    <Content Include="Admin\main.htm" />
+    <Content Include="Admin\LeftMenu.aspx" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\MainPage.aspx" />
+    <Content Include="Admin\MemberManage.aspx" />
+    <Content Include="Admin\NetworkAdd.aspx" />
+    <Content Include="Admin\NetWorkManage.aspx" />
+    <Content Include="Admin\news.aspx" />
+    <Content Include="Admin\NewsAdd.aspx" />
+    <Content Include="Admin\NewsPicManage.aspx" />
+    <Content Include="Admin\pagerstyle.css" />
+    <Content Include="Admin\PhotoManage.aspx" />
+    <Content Include="Admin\ProAdd.aspx" />
+    <Content Include="Admin\Prod.aspx" />
+    <Content Include="Admin\ProLb.aspx" />
+    <Content Include="Admin\ProPicManage.aspx" />
+    <Content Include="Admin\proTypeManage.aspx" />
+    <Content Include="Admin\ProvinceManage.aspx" />
+    <Content Include="Admin\pwd.aspx" />
+    <Content Include="Admin\Styles\admin.css" />
+    <Content Include="Admin\Styles\Site.css" />
+    <Content Include="Admin\upfile.aspx" />
+    <Content Include="Admin\uploadWallPaper.aspx" />
+    <Content Include="Admin\VideoManage.aspx" />
+    <Content Include="Admin\XiangCeManage.aspx" />
+    <Content Include="CheckAdminLogin.ascx" />
+    <Content Include="css\bg.css" />
+    <Content Include="css\function.css" />
+    <Content Include="css\global.css" />
+    <Content Include="css\goosedown.css" />
+    <Content Include="css\history.css" />
+    <Content Include="css\index.css" />
+    <Content Include="css\join.css" />
+    <Content Include="css\nanomax.css" />
+    <Content Include="css\networks.css" />
+    <Content Include="css\news.css" />
+    <Content Include="css\olympics.css" />
+    <Content Include="css\participation.css" />
+    <Content Include="css\partners.css" />
+    <Content Include="css\philosophy.css" />
+    <Content Include="css\product.css" />
+    <Content Include="css\ptx-ski.css" />
+    <Content Include="css\shoppe.css" />
+    <Content Include="css\softshell.css" />
+    <Content Include="css\spider.css" />
+    <Content Include="css\story.css" />
+    <Content Include="css\team.css" />
+    <Content Include="css\testers.css" />
+    <Content Include="css\translateelement.css" />
+    <Content Include="css\trekking-shoes.css" />
+    <Content Include="DB\conn.txt" />
+    <Content Include="FCKTest.aspx" />
+    <Content Include="getAiMianList.aspx" />
+    <Content Include="images\arrow_red.png" />
+    <Content Include="images\bg_x.jpg" />
+    <Content Include="images\box_shadow.png" />
+    <Content Include="images\btn_join1.png" />
+    <Content Include="images\btn_join2.png" />
+    <Content Include="images\content_bg.png" />
+    <Content Include="images\ficon1.png" />
+    <Content Include="images\ficon2.png" />
+    <Content Include="images\function.jpg" />
+    <Content Include="images\function2.jpg" />
+    <Content Include="images\function_icon\01.jpg" />
+    <Content Include="images\function_icon\02.jpg" />
+    <Content Include="images\function_icon\03.jpg" />
+    <Content Include="images\function_icon\04.jpg" />
+    <Content Include="images\function_icon\05.jpg" />
+    <Content Include="images\function_icon\06.jpg" />
+    <Content Include="images\function_icon\07.jpg" />
+    <Content Include="images\function_icon\08.jpg" />
+    <Content Include="images\function_icon\09.jpg" />
+    <Content Include="images\function_icon\10.jpg" />
+    <Content Include="images\function_icon\11.jpg" />
+    <Content Include="images\function_icon\12.jpg" />
+    <Content Include="images\function_icon\13.jpg" />
+    <Content Include="images\function_icon\14.jpg" />
+    <Content Include="images\function_icon\15.jpg" />
+    <Content Include="images\function_icon\16.jpg" />
+    <Content Include="images\function_icon\17.jpg" />
+    <Content Include="images\function_icon\18.jpg" />
+    <Content Include="images\function_icon\19.jpg" />
+    <Content Include="images\function_icon\20.jpg" />
+    <Content Include="images\function_icon\21.jpg" />
+    <Content Include="images\function_icon\22.jpg" />
+    <Content Include="images\function_icon\23.jpg" />
+    <Content Include="images\function_icon\24.jpg" />
+    <Content Include="images\function_icon\25.jpg" />
+    <Content Include="images\function_icon\26.jpg" />
+    <Content Include="images\function_icon\27.jpg" />
+    <Content Include="images\function_icon\28.jpg" />
+    <Content Include="images\function_icon\29.jpg" />
+    <Content Include="images\function_icon\30.jpg" />
+    <Content Include="images\function_icon\31.jpg" />
+    <Content Include="images\function_icon\32.jpg" />
+    <Content Include="images\function_icon\33.jpg" />
+    <Content Include="images\function_icon\34.jpg" />
+    <Content Include="images\function_icon\35.jpg" />
+    <Content Include="images\goosedown_content_1.png" />
+    <Content Include="images\goosedown_content_2.png" />
+    <Content Include="images\goosedown_content_3.jpg" />
+    <Content Include="images\goosedown_content_4.jpg" />
+    <Content Include="images\goosedown_sub_header_box_1.jpg" />
+    <Content Include="images\goosedown_sub_header_box_2.jpg" />
+    <Content Include="images\goosedown_sub_header_box_3.jpg" />
+    <Content Include="images\history_content_2.png" />
+    <Content Include="images\history_shadow.jpg" />
+    <Content Include="images\history_sub_header_box_1.png" />
+    <Content Include="images\history_sub_header_box_2.png" />
+    <Content Include="images\history_sub_header_box_3.png" />
+    <Content Include="images\home\home1.jpg" />
+    <Content Include="images\home\home10.jpg" />
+    <Content Include="images\home\home2.jpg" />
+    <Content Include="images\home\home3.jpg" />
+    <Content Include="images\home\home4.jpg" />
+    <Content Include="images\home\home5.jpg" />
+    <Content Include="images\home\home6.jpg" />
+    <Content Include="images\home\home7.jpg" />
+    <Content Include="images\home\home8.jpg" />
+    <Content Include="images\home\home9.jpg" />
+    <Content Include="images\img01.jpg" />
+    <Content Include="images\join.png" />
+    <Content Include="images\menu_bg_hover2.png" />
+    <Content Include="images\menu_sub_bg.png" />
+    <Content Include="images\menu_sub_bg_hover.png" />
+    <Content Include="images\nanomax.jpg" />
+    <Content Include="images\nanomax01.jpg" />
+    <Content Include="images\nanomax01.png" />
+    <Content Include="images\nanomax02.jpg" />
+    <Content Include="images\nanomax02.png" />
+    <Content Include="images\nanomax03.jpg" />
+    <Content Include="images\nanomax03.png" />
+    <Content Include="images\networks.png" />
+    <Content Include="images\news\img01.jpg" />
+    <Content Include="images\news\img02.jpg" />
+    <Content Include="images\news\img03.jpg" />
+    <Content Include="images\news\img04.jpg" />
+    <Content Include="images\news\img05.jpg" />
+    <Content Include="images\news\img06.jpg" />
+    <Content Include="images\news\img07.jpg" />
+    <Content Include="images\news\img08.jpg" />
+    <Content Include="images\olympics.jpg" />
+    <Content Include="images\olympics0.jpg" />
+    <Content Include="images\olympics1.jpg" />
+    <Content Include="images\olympics2.jpg" />
+    <Content Include="images\olympics3.jpg" />
+    <Content Include="images\olympics4.jpg" />
+    <Content Include="images\olympics5.jpg" />
+    <Content Include="images\olympics6.jpg" />
+    <Content Include="images\olympics7.jpg" />
+    <Content Include="images\olympics8.jpg" />
+    <Content Include="images\olympics9.jpg" />
+    <Content Include="images\participation_content_1.png" />
+    <Content Include="images\participation_subheader.png" />
+    <Content Include="images\partners_shadow.png" />
+    <Content Include="images\philosophy.jpg" />
+    <Content Include="images\philosophy1.jpg" />
+    <Content Include="images\philosophy2.jpg" />
+    <Content Include="images\philosophy3.jpg" />
+    <Content Include="images\philosophy4.jpg" />
+    <Content Include="images\philosophy5.jpg" />
+    <Content Include="images\philosophy_content_1.png" />
+    <Content Include="images\philosophy_sub_header_box_1.jpg" />
+    <Content Include="images\philosophy_sub_header_box_2.jpg" />
+    <Content Include="images\philosophy_sub_header_box_3.jpg" />
+    <Content Include="images\product\fico.png" />
+    <Content Include="images\product\img1.jpg" />
+    <Content Include="images\product\img2.jpg" />
+    <Content Include="images\product\img3.jpg" />
+    <Content Include="images\product\img4.jpg" />
+    <Content Include="images\product\img5.jpg" />
+    <Content Include="images\product\imgb1.jpg" />
+    <Content Include="images\product\nav_bg.png" />
+    <Content Include="images\product\p1.jpg" />
+    <Content Include="images\product\p2.jpg" />
+    <Content Include="images\product\p3.jpg" />
+    <Content Include="images\product\p4.jpg" />
+    <Content Include="images\product\p5.jpg" />
+    <Content Include="images\product\pimg01.jpg" />
+    <Content Include="images\product\pright_bg.jpg" />
+    <Content Include="images\product\sina.png" />
+    <Content Include="images\ptx-ski_content_1.png" />
+    <Content Include="images\ptx-ski_content_2.jpg" />
+    <Content Include="images\ptx-ski_content_3.png" />
+    <Content Include="images\ptx-ski_header.png" />
+    <Content Include="images\ptx-ski_sub_header_box_1.jpg" />
+    <Content Include="images\ptx-ski_sub_header_box_2.jpg" />
+    <Content Include="images\punta.png" />
+    <Content Include="images\search_bg.jpg" />
+    <Content Include="images\shadow_bg.png" />
+    <Content Include="images\shoppe01.jpg" />
+    <Content Include="images\shoppe02.jpg" />
+    <Content Include="images\shoppe03.jpg" />
+    <Content Include="images\shoppe04.jpg" />
+    <Content Include="images\shoppe05.jpg" />
+    <Content Include="images\shoppe06.jpg" />
+    <Content Include="images\shoppe07.jpg" />
+    <Content Include="images\shoppe08.jpg" />
+    <Content Include="images\shoppe09.jpg" />
+    <Content Include="images\shoppe10.jpg" />
+    <Content Include="images\shoppe11.jpg" />
+    <Content Include="images\shoppe12.jpg" />
+    <Content Include="images\shoppe13.jpg" />
+    <Content Include="images\shoppe14.jpg" />
+    <Content Include="images\shoppe15.jpg" />
+    <Content Include="images\shoppe16.jpg" />
+    <Content Include="images\shoppe17.jpg" />
+    <Content Include="images\softshell.png" />
+    <Content Include="images\softshell01.png" />
+    <Content Include="images\softshell02.png" />
+    <Content Include="images\softshell_back.png" />
+    <Content Include="images\spider_content_1.png" />
+    <Content Include="images\spider_content_2.png" />
+    <Content Include="images\spider_content_3.png" />
+    <Content Include="images\spider_content_4.png" />
+    <Content Include="images\spider_content_5.png" />
+    <Content Include="images\spider_content_6.png" />
+    <Content Include="images\spider_header.png" />
+    <Content Include="images\spider_sub_header_box_1.jpg" />
+    <Content Include="images\spider_sub_header_box_2.jpg" />
+    <Content Include="images\spider_sub_header_box_3.jpg" />
+    <Content Include="images\story.jpg" />
+    <Content Include="images\story1.jpg" />
+    <Content Include="images\story2.jpg" />
+    <Content Include="images\story3.jpg" />
+    <Content Include="images\story4.jpg" />
+    <Content Include="images\story5.jpg" />
+    <Content Include="images\story6.jpg" />
+    <Content Include="images\story7.jpg" />
+    <Content Include="images\story8.jpg" />
+    <Content Include="images\strip_bg_x.png" />
+    <Content Include="images\strip_logo.png" />
+    <Content Include="images\strip_logo2.png" />
+    <Content Include="images\team_member_1.png" />
+    <Content Include="images\team_member_2.png" />
+    <Content Include="images\team_member_3.png" />
+    <Content Include="images\team_member_4.png" />
+    <Content Include="images\team_member_5.png" />
+    <Content Include="images\team_member_6.png" />
+    <Content Include="images\team_member_bg.png" />
+    <Content Include="images\team_shadow.png" />
+    <Content Include="images\team_sub_header_box_1.jpg" />
+    <Content Include="images\team_sub_header_box_2.jpg" />
+    <Content Include="images\team_sub_header_box_3.jpg" />
+    <Content Include="images\tester_content_1.jpg" />
+    <Content Include="images\tester_content_2.jpg" />
+    <Content Include="images\tester_content_4.jpg" />
+    <Content Include="images\tester_sub_header_box_1.jpg" />
+    <Content Include="images\tester_sub_header_box_2.jpg" />
+    <Content Include="images\tester_sub_header_box_3.jpg" />
+    <Content Include="images\testing.jpg" />
+    <Content Include="images\testing1.jpg" />
+    <Content Include="images\testing10.jpg" />
+    <Content Include="images\testing11.jpg" />
+    <Content Include="images\testing12.jpg" />
+    <Content Include="images\testing2.jpg" />
+    <Content Include="images\testing3.jpg" />
+    <Content Include="images\testing4.jpg" />
+    <Content Include="images\testing5.jpg" />
+    <Content Include="images\testing6.jpg" />
+    <Content Include="images\testing7.jpg" />
+    <Content Include="images\testing8.jpg" />
+    <Content Include="images\testing9.jpg" />
+    <Content Include="images\testing_v1.jpg" />
+    <Content Include="images\testing_v2.jpg" />
+    <Content Include="images\trekking-shoes_sub_header_box_1.jpg" />
+    <Content Include="images\trekking-shoes_sub_header_box_2.jpg" />
+    <Content Include="images\trekking-shoes_sub_header_box_3.jpg" />
+    <Content Include="install\install.aspx" />
+    <Content Include="jsPage\page.css" />
+    <Content Include="jsPage\page.js" />
+    <Content Include="jsPage\page_html.js" />
+    <Content Include="js\animate.js" />
+    <Content Include="js\jcarousellite_1.0.1.js" />
+    <Content Include="js\jquery.jTab.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="Scripts\swfupload\swfupload.cookies.js" />
+    <Content Include="Scripts\swfupload\swfupload.js" />
+    <Content Include="Scripts\swfupload\swfupload.proxy.js" />
+    <Content Include="Scripts\swfupload\swfupload.queue.js" />
+    <Content Include="Scripts\swfupload\swfupload.speed.js" />
+    <Content Include="Scripts\swfupload\swfupload.swf" />
+    <Content Include="Scripts\swfupload\swfupload_fp9.swf" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="SwfUploadDemo\Default.aspx" />
+    <Content Include="SwfUploadDemo\Global.asax" />
+    <Content Include="SwfUploadDemo\images\error.gif" />
+    <Content Include="SwfUploadDemo\images\page_white_add.png" />
+    <Content Include="SwfUploadDemo\images\toobig.gif" />
+    <Content Include="SwfUploadDemo\images\uploadlimit.gif" />
+    <Content Include="SwfUploadDemo\images\XPButtonNoText_160x22.png" />
+    <Content Include="SwfUploadDemo\images\zerobyte.gif" />
+    <Content Include="SwfUploadDemo\js\handlers.js" />
+    <Content Include="SwfUploadDemo\thumbnail.aspx" />
+    <Content Include="SwfUploadDemo\upfile.aspx" />
+    <Content Include="SwfUploadDemo\upload.aspx" />
+    <Content Include="SwfUploadDemo\upload2.aspx" />
+    <Content Include="swfupload\handlers.js" />
+    <Content Include="swfupload\swfupload.js" />
+    <Content Include="swfupload\swfupload.swf" />
+    <Content Include="swfupload\swfuploadbutton.swf" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAdd.aspx.cs">
+      <DependentUpon>AdminAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAdd.aspx.designer.cs">
+      <DependentUpon>AdminAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminEdit.aspx.cs">
+      <DependentUpon>AdminEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminEdit.aspx.designer.cs">
+      <DependentUpon>AdminEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AiMianXingDongMng.aspx.cs">
+      <DependentUpon>AiMianXingDongMng.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AiMianXingDongMng.aspx.designer.cs">
+      <DependentUpon>AiMianXingDongMng.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CityManage.aspx.cs">
+      <DependentUpon>CityManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CityManage.aspx.designer.cs">
+      <DependentUpon>CityManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ColorManage.aspx.cs">
+      <DependentUpon>ColorManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ColorManage.aspx.designer.cs">
+      <DependentUpon>ColorManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\execSql.aspx.cs">
+      <DependentUpon>execSql.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\execSql.aspx.designer.cs">
+      <DependentUpon>execSql.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FriendLink.aspx.cs">
+      <DependentUpon>FriendLink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FriendLink.aspx.designer.cs">
+      <DependentUpon>FriendLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Header.aspx.cs">
+      <DependentUpon>Header.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Header.aspx.designer.cs">
+      <DependentUpon>Header.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IconManage.aspx.cs">
+      <DependentUpon>IconManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IconManage.aspx.designer.cs">
+      <DependentUpon>IconManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\jiameng.aspx.cs">
+      <DependentUpon>jiameng.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\jiameng.aspx.designer.cs">
+      <DependentUpon>jiameng.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LbManage.aspx.cs">
+      <DependentUpon>LbManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LbManage.aspx.designer.cs">
+      <DependentUpon>LbManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LeftMenu.aspx.cs">
+      <DependentUpon>LeftMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LeftMenu.aspx.designer.cs">
+      <DependentUpon>LeftMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MemberManage.aspx.cs">
+      <DependentUpon>MemberManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MemberManage.aspx.designer.cs">
+      <DependentUpon>MemberManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NetworkAdd.aspx.cs">
+      <DependentUpon>NetworkAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NetworkAdd.aspx.designer.cs">
+      <DependentUpon>NetworkAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NetWorkManage.aspx.cs">
+      <DependentUpon>NetWorkManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NetWorkManage.aspx.designer.cs">
+      <DependentUpon>NetWorkManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\news.aspx.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\news.aspx.designer.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewsAdd.aspx.cs">
+      <DependentUpon>NewsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewsAdd.aspx.designer.cs">
+      <DependentUpon>NewsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewsPicManage.aspx.cs">
+      <DependentUpon>NewsPicManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewsPicManage.aspx.designer.cs">
+      <DependentUpon>NewsPicManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PhotoManage.aspx.cs">
+      <DependentUpon>PhotoManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PhotoManage.aspx.designer.cs">
+      <DependentUpon>PhotoManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProAdd.aspx.cs">
+      <DependentUpon>ProAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProAdd.aspx.designer.cs">
+      <DependentUpon>ProAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Prod.aspx.cs">
+      <DependentUpon>Prod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Prod.aspx.designer.cs">
+      <DependentUpon>Prod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProLb.aspx.cs">
+      <DependentUpon>ProLb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProLb.aspx.designer.cs">
+      <DependentUpon>ProLb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProPicManage.aspx.cs">
+      <DependentUpon>ProPicManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProPicManage.aspx.designer.cs">
+      <DependentUpon>ProPicManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\proTypeManage.aspx.cs">
+      <DependentUpon>proTypeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\proTypeManage.aspx.designer.cs">
+      <DependentUpon>proTypeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProvinceManage.aspx.cs">
+      <DependentUpon>ProvinceManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProvinceManage.aspx.designer.cs">
+      <DependentUpon>ProvinceManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\pwd.aspx.cs">
+      <DependentUpon>pwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\pwd.aspx.designer.cs">
+      <DependentUpon>pwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\upfile.aspx.cs">
+      <DependentUpon>upfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\upfile.aspx.designer.cs">
+      <DependentUpon>upfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\uploadWallPaper.aspx.cs">
+      <DependentUpon>uploadWallPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\uploadWallPaper.aspx.designer.cs">
+      <DependentUpon>uploadWallPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\VideoManage.aspx.cs">
+      <DependentUpon>VideoManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\VideoManage.aspx.designer.cs">
+      <DependentUpon>VideoManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\XiangCeManage.aspx.cs">
+      <DependentUpon>XiangCeManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\XiangCeManage.aspx.designer.cs">
+      <DependentUpon>XiangCeManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\alert.cs" />
+    <Compile Include="App_Code\BitmapHelper.cs" />
+    <Compile Include="App_Code\card.cs" />
+    <Compile Include="App_Code\clsAdmin.cs" />
+    <Compile Include="App_Code\clsCard.cs" />
+    <Compile Include="App_Code\clsLB.cs" />
+    <Compile Include="App_Code\clsMember.cs" />
+    <Compile Include="App_Code\clsNews.cs" />
+    <Compile Include="App_Code\clsWeibo.cs" />
+    <Compile Include="App_Code\com.cs" />
+    <Compile Include="App_Code\Const.cs" />
+    <Compile Include="App_Code\Constants.cs" />
+    <Compile Include="App_Code\CookieHelper.cs" />
+    <Compile Include="App_Code\db.cs" />
+    <Compile Include="App_Code\FileSys.cs" />
+    <Compile Include="App_Code\member.cs" />
+    <Compile Include="App_Code\pg.cs" />
+    <Compile Include="App_Code\seo.cs" />
+    <Compile Include="App_Code\SQLHelper.cs" />
+    <Compile Include="App_Code\ThumNail.cs" />
+    <Compile Include="App_Code\TxtIO.cs" />
+    <Compile Include="CheckAdminLogin.ascx.cs">
+      <DependentUpon>CheckAdminLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckAdminLogin.ascx.designer.cs">
+      <DependentUpon>CheckAdminLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FCKTest.aspx.cs">
+      <DependentUpon>FCKTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FCKTest.aspx.designer.cs">
+      <DependentUpon>FCKTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getAiMianList.aspx.cs">
+      <DependentUpon>getAiMianList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getAiMianList.aspx.designer.cs">
+      <DependentUpon>getAiMianList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="install\install.aspx.cs">
+      <DependentUpon>install.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="install\install.aspx.designer.cs">
+      <DependentUpon>install.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwfUploadDemo\App_Code\Thumbnail.cs" />
+    <Compile Include="SwfUploadDemo\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwfUploadDemo\test.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwfUploadDemo\thumbnail.aspx.cs">
+      <DependentUpon>thumbnail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwfUploadDemo\upfile.aspx.cs">
+      <DependentUpon>upfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwfUploadDemo\upfile.aspx.designer.cs">
+      <DependentUpon>upfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SwfUploadDemo\upload.aspx.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwfUploadDemo\upload2.aspx.cs">
+      <DependentUpon>upload2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwfUploadDemo\upload2.aspx.designer.cs">
+      <DependentUpon>upload2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="SwfUploadDemo\UpFile\" />
+    <Folder Include="UpFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\din1451e.woff" />
+    <None Include="fonts\gotham.woff" />
+    <None Include="fonts\ptsnas.woff" />
+    <None Include="SwfUploadDemo\Web.Config--" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBFramework\DBFramework.csproj">
+      <Project>{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}</Project>
+      <Name>DBFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>29670</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

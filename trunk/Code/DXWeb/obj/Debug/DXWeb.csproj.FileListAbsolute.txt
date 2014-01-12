@@ -1,0 +1,7 @@
+E:\web\dianxinwu\点心屋\dianxinSln\DXWeb\bin\DXWeb.dll
+E:\web\dianxinwu\点心屋\dianxinSln\DXWeb\bin\DXWeb.pdb
+E:\web\dianxinwu\点心屋\dianxinSln\DXWeb\bin\DBFramework.dll
+E:\web\dianxinwu\点心屋\dianxinSln\DXWeb\bin\DBFramework.pdb
+E:\web\dianxinwu\点心屋\dianxinSln\DXWeb\obj\Debug\ResolveAssemblyReference.cache
+E:\web\dianxinwu\点心屋\dianxinSln\DXWeb\obj\Debug\DXWeb.dll
+E:\web\dianxinwu\点心屋\dianxinSln\DXWeb\obj\Debug\DXWeb.pdb

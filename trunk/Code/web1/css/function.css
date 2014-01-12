@@ -1,0 +1,85 @@
+#shadow {background: url('../images/function2.jpg') no-repeat center top;}
+
+#page {width:980px;margin:auto;}
+
+#header {height:234px;width:870px;}
+#header h1 {float:right;position:absolute;left:65px;top:60px;font-size:30px;color:#fff;font-weight:normal;font-family:"黑体","微软雅黑","宋体";line-height:55px;margin:50px 0px 0px 0px;padding:0;letter-spacing:-2px; text-indent:-999em;} 
+#header h1 span{ font-size:20px; font-family:Arial; padding-left:13px;}
+#content {
+	margin:auto;
+	width:840px;
+	position:relative;
+	top:0px;
+	padding:0px 70px;
+	background:url(../images/content_bg.png) left top repeat;
+}
+#content h3 {
+	font-size:30px;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:normal;
+	font-family:"黑体", "微软雅黑", "宋体";
+	margin:0px;
+	padding:0px;
+	line-height:150%;
+}
+
+#content .line {border-bottom:1px solid #414141;padding:30px 0px;float:left;width:870px;position:relative;}
+#content .line p {width:460px;float:left;margin:0;}
+#content .line h3 {float:left;width:460px;display:block;font-size:44px;color:#fff;text-transform:uppercase;font-weight:normal;font-family:"黑体","微软雅黑","宋体";margin:0px 0px;padding:0;}
+#content .line-l .img {float:left;width:365px;}
+#content .line-r .img {float:right;width:365px;text-align:right;}
+#content .last {border-bottom:0px;}
+#content .margin {margin:40px 0px;}
+
+#strip #menu li.Technology a {background: url('../images/menu_bg_hover2.png') no-repeat top center;color:#fff;}
+#strip #menu li.Technology ul li a {background:none;}
+#strip #menu li.Technology ul li.function a {background: url('../images/menu_sub_bg_hover.png') no-repeat;color:#fff;}
+
+
+
+.function_icon{height:660px; overflow:hidden; position:relative; width:840px;}
+.function_icon ul{ position:absolute;/* left:840px;*/top:30px; width:840px; overflow:hidden; padding:0px; margin:0px; display:none;}
+.function_icon ul.cur{ display:block;}
+.function_icon li{ margin-bottom:29px; height:34px; line-height:34px; list-style:none; padding-left:50px; overflow:hidden; font-size:12px;}
+.function_icon li.li01{ background:url(../images/function_icon/01.jpg) left top no-repeat;}
+.function_icon li.li02{ background:url(../images/function_icon/02.jpg) left top no-repeat;}
+.function_icon li.li03{ background:url(../images/function_icon/03.jpg) left top no-repeat;}
+.function_icon li.li04{ background:url(../images/function_icon/04.jpg) left top no-repeat;}
+.function_icon li.li05{ background:url(../images/function_icon/05.jpg) left top no-repeat;}
+.function_icon li.li06{ background:url(../images/function_icon/06.jpg) left top no-repeat;}
+.function_icon li.li07{ background:url(../images/function_icon/07.jpg) left top no-repeat;}
+.function_icon li.li08{ background:url(../images/function_icon/08.jpg) left top no-repeat;}
+.function_icon li.li09{ background:url(../images/function_icon/09.jpg) left top no-repeat;}
+.function_icon li.li10{ background:url(../images/function_icon/10.jpg) left top no-repeat;}
+.function_icon li.li11{ background:url(../images/function_icon/11.jpg) left top no-repeat;}
+.function_icon li.li12{ background:url(../images/function_icon/12.jpg) left top no-repeat;}
+.function_icon li.li13{ background:url(../images/function_icon/13.jpg) left top no-repeat;}
+.function_icon li.li14{ background:url(../images/function_icon/14.jpg) left top no-repeat;}
+.function_icon li.li15{ background:url(../images/function_icon/15.jpg) left top no-repeat;}
+.function_icon li.li16{ background:url(../images/function_icon/16.jpg) left top no-repeat;}
+.function_icon li.li17{ background:url(../images/function_icon/17.jpg) left top no-repeat;}
+.function_icon li.li18{ background:url(../images/function_icon/18.jpg) left top no-repeat;}
+.function_icon li.li19{ background:url(../images/function_icon/19.jpg) left top no-repeat;}
+.function_icon li.li20{ background:url(../images/function_icon/20.jpg) left top no-repeat;}
+.function_icon li.li21{ background:url(../images/function_icon/21.jpg) left top no-repeat;}
+.function_icon li.li22{ background:url(../images/function_icon/22.jpg) left top no-repeat;}
+.function_icon li.li23{ background:url(../images/function_icon/23.jpg) left top no-repeat;}
+.function_icon li.li24{ background:url(../images/function_icon/24.jpg) left top no-repeat;}
+.function_icon li.li25{ background:url(../images/function_icon/25.jpg) left top no-repeat;}
+.function_icon li.li26{ background:url(../images/function_icon/26.jpg) left top no-repeat;}
+.function_icon li.li27{ background:url(../images/function_icon/27.jpg) left top no-repeat;}
+.function_icon li.li28{ background:url(../images/function_icon/28.jpg) left top no-repeat;}
+.function_icon li.li29{ background:url(../images/function_icon/29.jpg) left top no-repeat;}
+.function_icon li.li30{ background:url(../images/function_icon/30.jpg) left top no-repeat;}
+.function_icon li.li31{ background:url(../images/function_icon/31.jpg) left top no-repeat;}
+.function_icon li.li32{ background:url(../images/function_icon/32.jpg) left top no-repeat;}
+.function_icon li.li33{ background:url(../images/function_icon/33.jpg) left top no-repeat;}
+.function_icon li.li34{ background:url(../images/function_icon/34.jpg) left top no-repeat;}
+.function_icon li.li35{ background:url(../images/function_icon/35.jpg) left top no-repeat;}
+
+
+.function_nav{ text-align:center; padding:0px 20px 80px;}
+.function_nav span{ background:url(../images/ficon2.png); width:11px; height:11px; display:inline-block; margin-right:13px; overflow:hidden; cursor:pointer;}
+.function_nav span.cur{ background:url(../images/ficon1.png);}
+.function_nav span.cur2{ background:url(../images/ficon1.png);}
