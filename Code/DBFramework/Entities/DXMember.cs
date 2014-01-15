@@ -6,7 +6,7 @@ using DBFramework.Entities.Attribute;
 
 namespace DBFramework.Entities
 {
-    public class dxMember : IEntity, IId
+    public class DXMember : IEntity, IId
     {
         [PropertyType(IsPrimaryKey = true)]
         public int Id { get; set; }
