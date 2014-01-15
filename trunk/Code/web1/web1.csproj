@@ -20,6 +20,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,9 +75,6 @@
     <Content Include="Admin\AdminAdd.aspx" />
     <Content Include="Admin\AdminEdit.aspx" />
     <Content Include="Admin\AiMianXingDongMng.aspx" />
-    <Content Include="Admin\CityManage.aspx" />
-    <Content Include="Admin\ColorManage.aspx" />
-    <Content Include="Admin\execSql.aspx" />
     <Content Include="Admin\FriendLink.aspx" />
     <Content Include="Admin\Header.aspx" />
     <Content Include="Admin\IconManage.aspx" />
@@ -110,7 +111,6 @@
     <Content Include="Admin\images\uploadlimit.gif" />
     <Content Include="Admin\images\XPButtonNoText_160x22.png" />
     <Content Include="Admin\images\zerobyte.gif" />
-    <Content Include="Admin\jiameng.aspx" />
     <Content Include="Admin\LbManage.aspx" />
     <Content Include="Admin\main.htm" />
     <Content Include="Admin\LeftMenu.aspx" />
@@ -452,27 +452,6 @@
     <Compile Include="Admin\AiMianXingDongMng.aspx.designer.cs">
       <DependentUpon>AiMianXingDongMng.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\CityManage.aspx.cs">
-      <DependentUpon>CityManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\CityManage.aspx.designer.cs">
-      <DependentUpon>CityManage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ColorManage.aspx.cs">
-      <DependentUpon>ColorManage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ColorManage.aspx.designer.cs">
-      <DependentUpon>ColorManage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\execSql.aspx.cs">
-      <DependentUpon>execSql.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\execSql.aspx.designer.cs">
-      <DependentUpon>execSql.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\FriendLink.aspx.cs">
       <DependentUpon>FriendLink.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -493,13 +472,6 @@
     </Compile>
     <Compile Include="Admin\IconManage.aspx.designer.cs">
       <DependentUpon>IconManage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\jiameng.aspx.cs">
-      <DependentUpon>jiameng.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\jiameng.aspx.designer.cs">
-      <DependentUpon>jiameng.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\LbManage.aspx.cs">
       <DependentUpon>LbManage.aspx</DependentUpon>
