@@ -29,7 +29,7 @@ LEFT JOIN Province c ON c.id=b.Pid
  WHERE lbid=24 and NewsID=" + NewsID;
                         try
                         {
-                            SQLHelper db = new SQLHelper();
+                            SQLHelper_ db = new SQLHelper_();
                             db.sql = sql;
                             DataTable dt = db.Get_DataTable();
                             if (dt.Rows.Count > 0)
@@ -94,7 +94,7 @@ LEFT JOIN Province c ON c.id=b.Pid
                 
                 //修改
                 sql = "UPDATE News SET Title='" + title + "',cityid='" + cityid + "',Description='" + tel + "',NewsBody='" + newsBody + "',EditTime=getdate() WHERE NewsID=" + id;
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 if (db.ExecSql() == "1")
                 {
@@ -113,7 +113,7 @@ LEFT JOIN Province c ON c.id=b.Pid
                 string newsid = clsNews.MaxNewsid();
                 lbid = "24";
                 sql = "INSERT INTO News(NewsID,lbid,Title,cityid,Description,NewsBody,Creator) VALUES(" + newsid + "," + lbid + ",'" + title + "','" + cityid + "','" + tel + "','" + newsBody + "','" + Session["AdminName"].ToString() + "')";
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 string result = db.ExecSql();
                 if (result == "1")
@@ -130,7 +130,7 @@ LEFT JOIN Province c ON c.id=b.Pid
         }
         protected void bindProvince()
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT id,name FROM " + com.tablePrefix + "Province ORDER BY OrderID";
             DataTable dt = db.Get_DataTable();
             ddlProvince.DataSource = dt;
@@ -142,7 +142,7 @@ LEFT JOIN Province c ON c.id=b.Pid
         {
             if (pid != "0")
             {
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = "SELECT id,name FROM " + com.tablePrefix + "City WHERE pid=" + pid + " ORDER BY OrderID";
                 DataTable dt = db.Get_DataTable();
 

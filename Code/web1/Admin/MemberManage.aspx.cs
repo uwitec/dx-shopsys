@@ -23,7 +23,7 @@ namespace web1.Admin
         }
         public DataTable getNewsDt()
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             string pagesize = PagerMember.PageSize.ToString();
             string curpage = pg.request(PagerMember.PagePara);
             string pageCount = "";//总页数
@@ -109,7 +109,7 @@ namespace web1.Admin
                     alert.Show(Page, "请填写昵称");
                     return;
                 }
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 if (NewsID.Length > 0)
                 {
                     //更新
@@ -158,9 +158,9 @@ namespace web1.Admin
 
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            string newsID = GV.DataKeys[e.RowIndex].Value.ToString();
-            SQLHelper db = new SQLHelper();
-            db.sql = "DELETE Members WHERE userid=" + newsID;
+            string id = GV.DataKeys[e.RowIndex].Value.ToString();
+            SQLHelper_ db = new SQLHelper_();
+            db.sql = "UPDATE DxMembers SET isDeleted=1 WHERE ID=" + id;
             db.ExecSql();
             bindGv();
             alert.Show(Page, "删除成功");

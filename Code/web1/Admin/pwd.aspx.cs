@@ -40,7 +40,7 @@ namespace web.admin
 
 
             string memberName = Session["AdminName"].ToString();
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT pwd FROM " + com.tablePrefix + "admin WHERE username='" + memberName + "'";
             DataTable dt = db.Get_DataTable();
 

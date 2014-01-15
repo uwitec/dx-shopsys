@@ -38,7 +38,7 @@ namespace web1.Admin
         {
             ddlLbid.Items.Clear();
             //ddlLbid.Items.Add(new ListItem("请选择类别", ""));
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT lbid,lbname FROM " + com.tablePrefix + "lb WHERE parentid=4 ORDER BY OrderId";
             DataTable dt = db.Get_DataTable();
             ddlLbid.DataSource = dt;
@@ -49,7 +49,7 @@ namespace web1.Admin
         }
         public DataTable getNewsDt()
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             try
             {
                 string pagesize = Pager1.PageSize.ToString();
@@ -132,7 +132,7 @@ namespace web1.Admin
                     return;
                 }
 
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 if (lbid.Length > 0)
                 {
                     //更新
@@ -176,7 +176,7 @@ namespace web1.Admin
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string lbid = GV.DataKeys[e.RowIndex].Value.ToString();
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "DELETE lb WHERE lbid=" + lbid;
             db.ExecSql();
             bindGv();

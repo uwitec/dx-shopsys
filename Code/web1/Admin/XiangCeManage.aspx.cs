@@ -31,7 +31,7 @@ namespace web1.Admin
         public DataTable getNewsDt()
         {
             lbid = hlbid.Value;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             string pagesize = Pager3.PageSize.ToString();
             string curpage = pg.request(Pager3.PagePara);
             string pageCount = "";//总页数
@@ -94,7 +94,7 @@ WHERE lbid=" + lbid;
                 {
                     if (fu.HasFile)
                     {
-                        SQLHelper db = new SQLHelper();
+                        SQLHelper_ db = new SQLHelper_();
                         //上传图片
                         string pic = UpFile(fu);
                         //删除原图
@@ -152,7 +152,7 @@ WHERE lbid=" + lbid;
                     EditTime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
                 }
                 string pic = UpFile(fu);
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 if (NewsID.Length > 0)
                 {
                     if (pic != "")
@@ -256,7 +256,7 @@ WHERE lbid=" + lbid;
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string newsID = GV.DataKeys[e.RowIndex].Value.ToString();
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT pic FROM " + com.tablePrefix + "News WHERE NewsID=" + newsID;
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)

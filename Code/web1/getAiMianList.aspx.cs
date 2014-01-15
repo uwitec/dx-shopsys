@@ -44,7 +44,7 @@ lbid	lbname	parentid
 
 
             string lbname = clsLB.getLbname(lbid);
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
 
             string sql = "SELECT NewsID AS ID,Title,pic,href AS LinkUrl FROM News WHERE lbid=" + lbid + " ORDER BY EditTime DESC";
             sql = "exec sp_GetPageData '" + sql + "'," + curpage + "," + pagesize;

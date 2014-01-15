@@ -37,7 +37,7 @@ namespace web1.Admin
                 int height = original_image.Height;
                 bool flag = false;
                 //验证分辨率
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = "SELECT id,size FROM " + com.tablePrefix + "wallpaperSize";
                 DataTable dt = db.Get_DataTable();
                 foreach (DataRow dr in dt.Rows)

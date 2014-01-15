@@ -24,7 +24,7 @@ namespace web1.Admin
                 string act = pg.request("act");
                 if (act == "del")
                 {
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
                     db.sql = "DELETE FROM " + com.tablePrefix + "News WHERE NewsID=" + id;
                     db.ExecSql();
                     alert.showAndGo("删除成功", "NetworkManage.aspx?ProvinceId=" + ProvinceId);
@@ -48,7 +48,7 @@ LEFT JOIN Province c ON c.id=b.Pid
                 sql += " AND c.id="+provid;
             }
             sql += " ORDER BY OrderId DESC";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
 
@@ -68,7 +68,7 @@ LEFT JOIN Province c ON c.id=b.Pid
         }
         protected void bindProvince()
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT id,name FROM " + com.tablePrefix + "Province ORDER BY OrderID";
             DataTable dt = db.Get_DataTable();
             ddlProvince.DataSource = dt;

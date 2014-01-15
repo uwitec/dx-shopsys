@@ -315,7 +315,7 @@ namespace web
         public static seo getSeo(string lbid)
         {
             seo s = new seo();
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT id,SeoTitle,SeoKey,SeoDesc FROM " + com.tablePrefix + "TB_SEO WHERE lbid=" + lbid;
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)

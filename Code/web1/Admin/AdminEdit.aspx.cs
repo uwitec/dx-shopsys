@@ -48,16 +48,6 @@ namespace web.admin
         {
             //Response.Write(""+RoleList.SelectedValue);
             string userRole = "";
-            for (int i = 0; i < RoleList.Items.Count; i++)
-            {
-                if (RoleList.Items[i].Selected)
-                {
-                    if (userRole == "")
-                        userRole = RoleList.Items[i].Value;
-                    else
-                        userRole += "," + RoleList.Items[i].Value;
-                }
-            }
             string username = txtUsername.Text;
             string pwd = txtPwd.Text;
             if (pwd.Length > 0)

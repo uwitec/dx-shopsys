@@ -29,7 +29,7 @@ namespace web1.Admin
                 }
                 else
                 {
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
                     db.sql = "SELECT TOP 1 lbid,NewsID,Title FROM " + com.tablePrefix + "News WHERE NewsID=" + productid;
                     DataTable dt = db.Get_DataTable();
                     if (dt.Rows.Count > 0)
@@ -49,7 +49,7 @@ namespace web1.Admin
         public DataTable getNewsDt()
         {
             productid = hlbid.Value;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             string pagesize = Pager0.PageSize.ToString();
             string curpage = pg.request(Pager0.PagePara);
             string pageCount = "";//总页数
@@ -118,7 +118,7 @@ WHERE a.ParentNewsID=" + productid;
 
                     picSmall = pic.ToLower().Replace(".jpg", "_s.jpg");
                     //ThumNail.MakeThumNail(pic, picSmall, 127, 127, "HW");
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
 
                     //删除原图
                     db.sql = "SELECT pic,picSmall FROM " + com.tablePrefix + "News WHERE NewsID=" + NewsID;
@@ -209,7 +209,7 @@ WHERE a.ParentNewsID=" + productid;
                 string pic = UpFile(fu);
                 string picSmall = "";
                 if (pic != "") picSmall = pic.ToLower().Replace(".jpg", "_s.jpg");
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
 
                 if (NewsID.Length > 0)
                 {
@@ -341,7 +341,7 @@ WHERE a.ParentNewsID=" + productid;
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string newsID = GV.DataKeys[e.RowIndex].Value.ToString();
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             //删除图片
             db.sql = "SELECT pic FROM " + com.tablePrefix + "News WHERE NewsID=" + newsID;
             DataTable dt = db.Get_DataTable();
@@ -407,7 +407,7 @@ WHERE a.ParentNewsID=" + productid;
             DropDownList ddl = (DropDownList)g.Rows[index].FindControl("ddlColor");
             if (ddl != null)
             {
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = "SELECT id,ColorName,ColorValue,OrderId,SUBSTRING(('000'+CONVERT(varchar,OrderId)),LEN('000'+CONVERT(varchar,OrderId))-3,4)+' '+ColorName AS ColorText FROM " + com.tablePrefix + "Color ORDER BY OrderId";
                 DataTable dt = db.Get_DataTable();
                 ddl.DataSource = dt;
@@ -429,7 +429,7 @@ WHERE a.ParentNewsID=" + productid;
             DropDownList ddl_imgtid = (DropDownList)g.Rows[index].FindControl("ddlpro_imgTypeid");
             if (ddl_imgtid != null)
             {
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = "SELECT id,ImgTypeName FROM " + com.tablePrefix + "ProductImgType ORDER BY OrderId";
                 DataTable dt = db.Get_DataTable();
                 ddl_imgtid.DataSource = dt;
