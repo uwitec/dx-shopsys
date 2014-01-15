@@ -26,14 +26,14 @@
     </div>
         <asp:GridView ID="GV" runat="server" CssClass="tabelStyle" 
             AutoGenerateColumns="False" Width="100%" 
-            onpageindexchanging="GV_PageIndexChanging" DataKeyNames="lbid" 
+            onpageindexchanging="GV_PageIndexChanging" DataKeyNames="Id" 
         onrowcommand="GV_RowCommand" onrowdeleting="GV_RowDeleting" 
         onrowediting="GV_RowEditing" onrowupdating="GV_RowUpdating" 
         onrowcancelingedit="GV_RowCancelingEdit" onrowdatabound="GV_RowDataBound">
         <Columns>
-            <asp:BoundField DataField="pid" HeaderText="pid" SortExpression="pid" Visible="false" />
-            <asp:BoundField DataField="lbid" HeaderText="lbid" SortExpression="lbid" Visible="false" />
-            <asp:BoundField DataField="lbname" HeaderText="类别名称" ItemStyle-HorizontalAlign="Left" />
+            <asp:BoundField DataField="ParentId" HeaderText="ParentId" SortExpression="ParentId" Visible="false" />
+            <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" Visible="false" />
+            <asp:BoundField DataField="LbName" HeaderText="类别名称" ItemStyle-HorizontalAlign="Left" />
 
 
            <asp:TemplateField HeaderText="操作">

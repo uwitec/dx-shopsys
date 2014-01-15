@@ -83,6 +83,7 @@ namespace web
 
         public static bool gsqLogin(string uname)
         {
+            SQLHelper.Setup();
             List<DXAdmin> list = SQLHelper.GetEntities<DXAdmin>();
             if (list.Count > 0)
             {

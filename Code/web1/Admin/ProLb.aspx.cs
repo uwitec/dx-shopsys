@@ -8,6 +8,8 @@ using System.Data;
 using System.IO;
 using web;
 using UcfarPagerControls;
+using DBFramework;
+using DBFramework.Entities;
 namespace web1.Admin
 {
     public partial class ProLb : System.Web.UI.Page
@@ -36,14 +38,14 @@ namespace web1.Admin
 
         public void bindDdlLbid()
         {
+            SQLHelper.Setup();
+            List<DXLb> lbs = SQLHelper.GetEntities<DXLb>(" ParentId=0 AND IsDeleted=0 ORDER BY OrderId");
+
             ddlLbid.Items.Clear();
-            //ddlLbid.Items.Add(new ListItem("请选择类别", ""));
-            SQLHelper_ db = new SQLHelper_();
-            db.sql = "SELECT lbid,lbname FROM " + com.tablePrefix + "lb WHERE parentid=4 ORDER BY OrderId";
-            DataTable dt = db.Get_DataTable();
-            ddlLbid.DataSource = dt;
-            ddlLbid.DataValueField = "lbid";
-            ddlLbid.DataTextField = "lbname";
+            ddlLbid.Items.Add(new ListItem("全部类别", "0"));
+            ddlLbid.DataSource = lbs;
+            ddlLbid.DataValueField = "Id";
+            ddlLbid.DataTextField = "LbName";
             ddlLbid.DataBind();
             ddlLbid.SelectedIndex = 0;
         }
@@ -58,10 +60,10 @@ namespace web1.Admin
                 int rowCount = 0;
                 if (pagesize == "") pagesize = "10";
                 if (curpage == "") curpage = "1";
-                string sql = "SELECT lbid,lbname FROM " + com.tablePrefix + "lb WHERE 1=1 ";
+                string sql = "SELECT Id,LbName FROM DXLb WHERE  IsDeleted=0 ";
                 if (ddlLbid.SelectedValue.Length > 0)
                 {
-                    sql += " AND parentid=" + ddlLbid.SelectedValue;
+                    sql += " AND ParentId=" + ddlLbid.SelectedValue;
                 }
 
                 sql += " ORDER BY OrderId";
@@ -131,17 +133,17 @@ namespace web1.Admin
                     alert.ShowAndBack(Page, "请填写类别名称");
                     return;
                 }
-
+                
                 SQLHelper_ db = new SQLHelper_();
                 if (lbid.Length > 0)
                 {
                     //更新
-                    string sql = "UPDATE lb SET lbname='" + title + "'";
-                    sql += " WHERE lbid=" + lbid;
-                    db.sql = sql;
-                    if (db.ExecSql() != "1")
+                    List<DXLb> lbs = SQLHelper.GetEntities<DXLb>(" Id=" + lbid);
+                    DXLb lb = lbs[0];
+                    lb.LbName = title;
+                    if (!SQLHelper.UpdateEntity<DXLb>(lb))
                     {
-                        alert.Show(Page, "保存失败");
+                        alert.Show(Page, "编辑保存失败");
                     }
                     else
                     {
@@ -151,18 +153,22 @@ namespace web1.Admin
                 }
                 else
                 {
-                    //添加
-                    db.sql = "INSERT INTO lb(lbid,lbname,parentid) VALUES(" + clsLB.MaxLbid() + ",'" + title + "'," + ddlLbid.SelectedValue + ")";
-                    if (db.ExecSql() != "1")
+                    try
                     {
-                        alert.Show(Page, "添加失败");
-                    }
-                    else
-                    {
+                        DXLb lb = new DXLb { LbName = title, ParentId = Int32.Parse(ddlLbid.SelectedValue), IsDeleted = false };
+                        SQLHelper.CreateEntity<DXLb>(lb);
                         GV.EditIndex = -1;
                         bindGv();
+                        if (ddlLbid.SelectedValue == "0")
+                            bindDdlLbid();
+                    }
+                    catch (Exception)
+                    {
+                        alert.Show(Page, "添加失败  ");
+                        //throw;
                     }
                 }
+                
             }
 
         }
@@ -176,9 +182,16 @@ namespace web1.Admin
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string lbid = GV.DataKeys[e.RowIndex].Value.ToString();
-            SQLHelper_ db = new SQLHelper_();
-            db.sql = "DELETE lb WHERE lbid=" + lbid;
-            db.ExecSql();
+            List<DXLb> lbs = SQLHelper.GetEntities<DXLb>(" IsDeleted=0 AND id=" + lbid);
+            if (lbs.Count > 0)
+            {
+                DXLb lb = lbs[0];
+                SQLHelper.DeleteEntity<DXLb>(lb);
+                if (lb.ParentId == 0)
+                {
+                    bindDdlLbid();
+                }
+            }
             bindGv();
             alert.Show(Page, "删除成功");
             return;

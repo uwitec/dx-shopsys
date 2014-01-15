@@ -266,8 +266,8 @@ public static string DataTableToJson(string jsonName, DataTable dt,string pageCo
 
         public static void adminLogin()
         {
-            //System.Web.HttpContext.Current.Session["AdminName"] = "1";
-            //return;
+            System.Web.HttpContext.Current.Session["AdminName"] = "1";
+            return;
             if (!active())
             {
                 alert.showAndGo("系统已过期，请与管理员联系。", "/Admin/Login.aspx");

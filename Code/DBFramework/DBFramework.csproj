@@ -63,7 +63,7 @@
     <Compile Include="Entities\Attribute\PropertyType.cs" />
     <Compile Include="Entities\DXAdmin.cs" />
     <Compile Include="Entities\DXLb.cs" />
-    <Compile Include="Entities\dxMember.cs" />
+    <Compile Include="Entities\DXMember.cs" />
     <Compile Include="Entities\dxProd.cs" />
     <Compile Include="Entities\Interface\IEntity.cs" />
     <Compile Include="Entities\Interface\IId.cs" />
