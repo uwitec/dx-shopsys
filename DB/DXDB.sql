@@ -119,7 +119,7 @@ GO
 USE [DXDB]
 GO
 
-/****** Object:  Table [dbo].[dxMember]    Script Date: 01/12/2014 14:56:37 ******/
+/****** Object:  Table [dbo].[DXMember]    Script Date: 01/12/2014 14:56:37 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -129,14 +129,14 @@ GO
 SET ANSI_PADDING ON
 GO
 
-CREATE TABLE [dbo].[dxMember](
+CREATE TABLE [dbo].[DXMember](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](50) NULL,
 	[Pwd] [varchar](50) NULL,
 	[LoginTime] [datetime] NULL,
 	[RegTime] [datetime] NULL,
 	[IsDeleted] [bit] NOT NULL,
- CONSTRAINT [PK_dxMember] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_DXMember] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
