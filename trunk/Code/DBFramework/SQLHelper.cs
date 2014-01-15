@@ -32,6 +32,16 @@ namespace DBFramework
         public static string ConnectionString = null;
 
         public static bool IsSetup = false;
+        public static void Setup()
+        {
+            if (ConnectionString == null)
+                ConnectionString = System.Configuration.ConfigurationSettings.AppSettings["SQLConnString"].ToString();
+            if (Connected())
+                IsSetup = true;
+            else
+                IsSetup = false;
+        }
+
 
         public static void Setup(string connectionString)
         {
