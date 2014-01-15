@@ -30,7 +30,7 @@ namespace web
         /// <summary>
         /// 构造函数
         /// </summary>
-        public SQLHelper()
+        public SQLHelper_()
         {
             //StreamReader sr = File.OpenText(realFileName);
             //ConnectionString = sr.ReadToEnd();
