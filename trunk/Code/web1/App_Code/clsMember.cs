@@ -25,7 +25,7 @@ namespace web
         {
             Member m = new Member();
             string sql = "SELECT userid,username,email,sex FROM " + com.tablePrefix + "Members WHERE email='" + email + "'";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)
@@ -86,7 +86,7 @@ namespace web
 
         public bool exists(string uname)
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT * FROM " + com.tablePrefix + "Members WHERE username='" + uname + "'";
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)
@@ -100,7 +100,7 @@ namespace web
         }
         public bool emailExists(string email)
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT * FROM " + com.tablePrefix + "Members WHERE email='" + email + "'";
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)
@@ -114,7 +114,7 @@ namespace web
         }
         public bool login(string email, string pwd)
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT * FROM " + com.tablePrefix + "Members WHERE email='" + email + "' AND pwd='" + pwd + "'";
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)

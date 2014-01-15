@@ -58,7 +58,7 @@ namespace web1.Admin
                 if (act == "del")
                 {
                     string id = pg.request("id");
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
                     db.sql = "SELECT pic,picSmall FROM " + com.tablePrefix + "News WHERE NewsID=" + id;
                     DataTable dt = db.Get_DataTable();
                     if (dt.Rows.Count > 0)
@@ -110,7 +110,7 @@ FROM " + com.tablePrefix + "News  WHERE ParentNewsID=" + id;
 FROM "+com.tablePrefix+@"News 
 WHERE lbid=" + lbid;
             sql += " ORDER BY isTop DESC,IsIndex DESC,AddTime DESC";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
 
@@ -122,7 +122,7 @@ WHERE lbid=" + lbid;
         {
             string re = "";
             string sql = "SELECT isNull(isTop,0) as isTop,lbid FROM " + com.tablePrefix + "News WHERE newsid=" + newsid;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)
@@ -140,7 +140,7 @@ WHERE lbid=" + lbid;
         {
             string re = "";
             string sql = "SELECT isNull(IsIndex,0) as IsIndex,lbid FROM " + com.tablePrefix + "News WHERE newsid=" + newsid;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)

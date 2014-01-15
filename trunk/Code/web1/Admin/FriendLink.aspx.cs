@@ -43,7 +43,7 @@ namespace web1.Admin
         public DataTable getNewsDt()
         {
                 lbid = hlbid.Value;
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
             try
             {
                 if (Pager1 == null)
@@ -123,7 +123,7 @@ WHERE lbid=" + lbid;
                 pic = UpFile(fu);
                 if (pic != "")
                 {
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
                     //删除原图
                     db.sql = "SELECT pic FROM " + com.tablePrefix + "News WHERE NewsID=" + NewsID;
                     string pic0 = db.Get_DataTable().Rows[0][0].ToString();
@@ -202,7 +202,7 @@ WHERE lbid=" + lbid;
                 string pic = UpFile(fu);
 
 
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 if (NewsID.Length > 0)
                 {
                     //取出旧图
@@ -314,7 +314,7 @@ WHERE lbid=" + lbid;
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string newsID = GV.DataKeys[e.RowIndex].Value.ToString();
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             //删除图片
             db.sql = "SELECT pic FROM " + com.tablePrefix + "News WHERE NewsID=" + newsID;
             DataTable dt = db.Get_DataTable();

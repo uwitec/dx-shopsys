@@ -46,7 +46,7 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
         {
             string maxlbid = MaxLbid();
             string sql = "INSERT INTO " + com.tablePrefix + "lb (lbid,lbname,parentid,OrderId) VALUES(" + maxlbid + ",'" + lbname + "'," + parentid + "," + maxlbid + ")";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             return db.ExecSql();
         }
@@ -54,14 +54,14 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
         public static void Update(string id, string lbname)
         {
             string sql = "UPDATE " + com.tablePrefix + "lb SET lbname='" + lbname + "' WHERE id=" + id;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             db.ExcSql();
         }
         public static void Update(string id, string lbname,string orderid)
         {
             string sql = "UPDATE " + com.tablePrefix + "lb SET lbname='" + lbname + "',orderid="+orderid+" WHERE id=" + id;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             db.ExcSql();
         }
@@ -76,7 +76,7 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
             if (lbid != "0")
             {
                 string sql = "SELECT lbname from " + com.tablePrefix + "lb WHERE lbid=" + lbid + "";
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 DataTable dt = db.Get_DataTable();
                 if (dt.Rows.Count > 0)
@@ -96,7 +96,7 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
         public static string getPid(string lbid)
         {
             string sql = "SELECT parentid from " + com.tablePrefix + "lb WHERE lbid=" + lbid + "";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)
@@ -139,7 +139,7 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
         }
         public static string MaxLbid()
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT ISNULL(Max(lbid),0)+1 AS lbid FROM " + com.tablePrefix + "lb";
             DataTable dt = db.Get_DataTable();
             return dt.Rows[0][0].ToString();
@@ -152,7 +152,7 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
         /// <returns>排序后的dataTable</returns>
         public static void lbOrderUP(string id,bool isUp)
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT id,lbid,parentid,orderid FROM "+com.tablePrefix+"lb WHERE id="+id;
             DataTable dt = db.Get_DataTable();
             string parentid = dt.Rows[0]["parentid"].ToString();
@@ -192,13 +192,13 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
         public static void del(string id)
         {
             SQLHelper.DeleteEntity<DXLb>(id);
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "UPDATE lb SET isDeleted=1 WHERE id="+id;
             db.ExecSql();
         }
         public static bool lbnameExists(string lbname)
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT 1 FROM " + com.tablePrefix + "lb WHERE lbname='" + lbname+"'";
             if (db.Get_DataTable().Rows.Count > 0)
                 return true;

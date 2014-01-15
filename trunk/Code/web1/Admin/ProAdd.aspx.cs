@@ -35,7 +35,7 @@ namespace web1.Admin
                     {
                         //由前台的jquery异步调用
                         string imgsrc = pg.request("imgsrc");
-                        SQLHelper db = new SQLHelper();
+                        SQLHelper_ db = new SQLHelper_();
                         db.sql = "UPDATE News SET pic = replace(pic,'" + imgsrc + "','') WHERE NewsID=" + NewsID;
                         db.ExecSql();
                         db.sql = "UPDATE News SET pic = replace(pic,'||','|') WHERE NewsID=" + NewsID;
@@ -49,7 +49,7 @@ namespace web1.Admin
                         string sql = "SELECT * FROM " + com.tablePrefix + "News WHERE NewsID=" + NewsID;
                         try
                         {
-                            SQLHelper db = new SQLHelper();
+                            SQLHelper_ db = new SQLHelper_();
                             db.sql = sql;
                             DataTable dt = db.Get_DataTable();
                             if (dt.Rows.Count > 0)
@@ -164,7 +164,7 @@ namespace web1.Admin
                 }
                 //修改
                 sql = "UPDATE News SET lbid=" + lbid + ", Title='" + title + "',pro_mianliao='" + mianliao + "',pro_bianhao='" + bianhao + "',picSmall='" + picSmall + "',AddTime='" + addtime + "',Description='" + size + "',NewsBody='" + newsBody + "',Editor='" + Session["AdminName"].ToString() + "',EditTime=getdate(),pro_function='" + func + "' WHERE NewsID=" + id;
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 if (db.ExecSql() == "1")
                 {
@@ -188,7 +188,7 @@ namespace web1.Admin
                 //添加
                 string newsid = clsNews.MaxNewsid();
                 sql = "INSERT INTO News(NewsID,lbid,Description,Title,picSmall,pro_bianhao,pro_mianliao,AddTime,pro_function,NewsBody,Creator) VALUES(" + newsid + "," + lbid + ",'" + size + "','" + title + "','" + picSmall + "','" + bianhao + "','" + mianliao + "','" + addtime + "','" + func + "','" + newsBody + "','" + Session["AdminName"].ToString() + "')";
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 string result = db.ExecSql();
                 if (result == "1")
@@ -206,7 +206,7 @@ namespace web1.Admin
         protected void bindLbList()
         {
             pid = hPid.Value;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT lbid,lbname FROM " + com.tablePrefix + "lb WHERE parentid=" + pid + " Order by orderid";
             DataTable dt = db.Get_DataTable();
             lbList.DataSource = dt.DefaultView;
@@ -229,7 +229,7 @@ namespace web1.Admin
             //    functionList.Items.Add(li);
             //}
 
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "SELECT NewsId,Title,Description,pic FROM " + com.tablePrefix + "News WHERE lbid=64";
             DataTable dt = db.Get_DataTable();
             functionList.DataSource = dt;

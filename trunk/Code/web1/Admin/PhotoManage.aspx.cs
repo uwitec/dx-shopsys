@@ -24,7 +24,7 @@ namespace web1.Admin
                 string realLbid = "";//lb.lbid
                 if (lbid == "")
                 {
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
                     db.sql = "SELECT TOP 1 lbid,NewsID,Title FROM " + com.tablePrefix + "News WHERE lbid=10";
                     DataTable dt = db.Get_DataTable();
                     if (dt.Rows.Count > 0)
@@ -37,7 +37,7 @@ namespace web1.Admin
                 }
                 else
                 {
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
                     db.sql = "SELECT TOP 1 lbid,NewsID,Title FROM " + com.tablePrefix + "News WHERE NewsID=" + lbid;
                     DataTable dt = db.Get_DataTable();
                     if (dt.Rows.Count > 0)
@@ -109,7 +109,7 @@ WHERE ParentNewsID=" + lbid;
                 if (pic != "")
                 {
                     picSmall = pic.ToLower().Replace(".jpg", "_s.jpg");
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
 
                     //删除原图
                     db.sql = "SELECT pic FROM " + com.tablePrefix + "News WHERE NewsID=" + NewsID;
@@ -129,7 +129,7 @@ WHERE ParentNewsID=" + lbid;
                 if (picSmall != "")
                 {
 
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
 
                     //删除原图
                     db.sql = "SELECT picSmall FROM " + com.tablePrefix + "News WHERE NewsID=" + NewsID;
@@ -190,7 +190,7 @@ WHERE ParentNewsID=" + lbid;
 
                 if (pic != "") picSmall = pic.ToLower().Replace(".jpg", "_s.jpg");
 
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 if (NewsID.Length > 0)
                 {
                     //取出旧图
@@ -307,7 +307,7 @@ WHERE ParentNewsID=" + lbid;
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string newsID = GV.DataKeys[e.RowIndex].Value.ToString();
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             //删除图片
             db.sql = "SELECT picSmall,pic FROM " + com.tablePrefix + "News WHERE NewsID=" + newsID;
             DataTable dt = db.Get_DataTable();

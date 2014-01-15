@@ -40,7 +40,7 @@ namespace web1.Admin
                     {
                         //由前台的jquery异步调用
                         string imgsrc = pg.request("imgsrc");
-                        SQLHelper db = new SQLHelper();
+                        SQLHelper_ db = new SQLHelper_();
                         db.sql = "UPDATE News SET pic = replace(pic,'" + imgsrc + "','') WHERE NewsID=" + NewsID;
                         db.ExecSql();
                         db.sql = "UPDATE News SET pic = replace(pic,'||','|') WHERE NewsID=" + NewsID;
@@ -54,7 +54,7 @@ namespace web1.Admin
                         string sql = "SELECT * FROM " + com.tablePrefix + "News WHERE NewsID=" + NewsID;
                         try
                         {
-                            SQLHelper db = new SQLHelper();
+                            SQLHelper_ db = new SQLHelper_();
                             db.sql = sql;
                             DataTable dt = db.Get_DataTable();
                             if (dt.Rows.Count > 0)
@@ -144,7 +144,7 @@ namespace web1.Admin
                 }
                 //修改
                 sql = "UPDATE News SET lbid="+lbid+",Title='" + title + "',pic = '"+video+"',Description='"+desc+"',AddTime='" + addtime + "',picSmall='" + picSmall + "',NewsBody='" + newsBody + "',Editor='" + Session["AdminName"].ToString() + "',EditTime=getdate() WHERE NewsID=" + id;
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 string result = db.ExecSql();
                 if (result == "1")
@@ -169,7 +169,7 @@ namespace web1.Admin
                 //添加
                 string newsid = clsNews.MaxNewsid();
                 sql = "INSERT INTO News(NewsID,lbid,Title,pic,Description,AddTime,picSmall,NewsBody,Creator) VALUES(" + newsid + "," + lbid + ",'" + title + "','"+video+"','" + desc + "','" + addtime + "','" + picSmall + "','" + newsBody + "','" + Session["AdminName"].ToString() + "')";
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 string result = db.ExecSql();
                 if (result == "1")
@@ -186,7 +186,7 @@ namespace web1.Admin
         protected void bindDDlLbid()
         {
             string sql = "SELECT lbid,lbname FROM " + com.tablePrefix + "lb WHERE parentid=1";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
             ddlLbid.DataSource = dt;

@@ -39,7 +39,7 @@ namespace web
                 sql = "UPDATE Admin SET role='" + role + "' WHERE id=" + id;
             try
             {
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 db.ExecSql();
                 return "1";
@@ -54,7 +54,7 @@ namespace web
             string sql = "DELETE Admin WHERE id=" + id;
             try
             {
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 db.ExecSql();
                 return true;
@@ -68,7 +68,7 @@ namespace web
         public static DataTable AdminInfo(string username)
         {
             string sql = "SELECT * FROM " + com.tablePrefix + "Admin WHERE username='" + username + "'";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             return db.Get_DataTable();
         }
@@ -76,42 +76,11 @@ namespace web
         public static DataTable AdminInfo(int id)
         {
             string sql = "SELECT * FROM " + com.tablePrefix + "Admin WHERE id=" + id.ToString() + "";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             return db.Get_DataTable();
         }
 
-        public static bool hasRole(string lbid)
-        {
-            if (System.Web.HttpContext.Current.Session["AdminName"] == null)
-            {
-                return false;
-            }
-            else
-            {
-                string AdminName = System.Web.HttpContext.Current.Session["AdminName"].ToString();
-                if (isAdmin(AdminName))
-                {
-                    return true;
-                }
-                else
-                {
-                    lbid = "," + lbid + ",";
-                    string sql = "SELECT * FROM " + com.tablePrefix + "Admin WHERE username='" + AdminName + "' AND  ','+Role+',' LIKE '%" + lbid + "%'";
-                    SQLHelper db = new SQLHelper();
-                    db.sql = sql;
-                    DataTable dt = db.Get_DataTable();
-                    if (dt.Rows.Count > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-        }
         public static bool gsqLogin(string uname)
         {
             List<DXAdmin> list = SQLHelper.GetEntities<DXAdmin>();

@@ -33,7 +33,7 @@ namespace web1.Admin
 
         public DataTable getNewsDt()
         {
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             try
             {
                 string pagesize = Pager1.PageSize.ToString();
@@ -149,7 +149,7 @@ namespace web1.Admin
                 {
                     orderid = "0";
                 }
-                SQLHelper db = new SQLHelper();
+                SQLHelper_ db = new SQLHelper_();
                 if (lbid.Length > 0)
                 {
                     //更新
@@ -193,7 +193,7 @@ namespace web1.Admin
         protected void GV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string lbid = GV.DataKeys[e.RowIndex].Value.ToString();
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = "DELETE Province WHERE id=" + lbid;
             db.ExecSql();
             bindGv();

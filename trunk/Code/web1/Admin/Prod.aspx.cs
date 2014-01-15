@@ -49,7 +49,7 @@ namespace web1.Admin
                 if (act == "del")
                 {
                     string id = pg.request("id");
-                    SQLHelper db = new SQLHelper();
+                    SQLHelper_ db = new SQLHelper_();
                     db.sql = "SELECT pic,picSmall FROM " + com.tablePrefix + "News WHERE NewsID=" + id;
                     DataTable dt = db.Get_DataTable();
                     if (dt.Rows.Count > 0)
@@ -103,7 +103,7 @@ INNER JOIN "+com.tablePrefix+@"lb b ON a.lbid=b.lbid
 INNER JOIN "+com.tablePrefix+@"lb c ON b.parentid=c.lbid
 WHERE c.lbid =" + pid;
             sql += " ORDER BY a.isTop DESC,a.IsIndex DESC,a.AddTime DESC";
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
 
@@ -116,7 +116,7 @@ WHERE c.lbid =" + pid;
             pid = hPid.Value;
             string re = "";
             string sql = "SELECT isNull(isTop,0) as isTop,lbid FROM " + com.tablePrefix + "News WHERE newsid=" + newsid;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)
@@ -134,7 +134,7 @@ WHERE c.lbid =" + pid;
         {
             string re = "";
             string sql = "SELECT isNull(IsIndex,0) as IsIndex,lbid FROM " + com.tablePrefix + "News WHERE newsid=" + newsid;
-            SQLHelper db = new SQLHelper();
+            SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
             if (dt.Rows.Count > 0)
