@@ -75,6 +75,7 @@
     <Content Include="Admin\AdminAdd.aspx" />
     <Content Include="Admin\AdminEdit.aspx" />
     <Content Include="Admin\AiMianXingDongMng.aspx" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\FriendLink.aspx" />
     <Content Include="Admin\Header.aspx" />
     <Content Include="Admin\IconManage.aspx" />
@@ -451,6 +452,13 @@
     </Compile>
     <Compile Include="Admin\AiMianXingDongMng.aspx.designer.cs">
       <DependentUpon>AiMianXingDongMng.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\FriendLink.aspx.cs">
       <DependentUpon>FriendLink.aspx</DependentUpon>
