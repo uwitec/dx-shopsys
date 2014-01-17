@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.IO;
 
-namespace web
+namespace web1
 {
     public static class FileSys
     {

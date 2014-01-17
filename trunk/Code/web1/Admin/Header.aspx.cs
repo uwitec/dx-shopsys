@@ -12,6 +12,7 @@ namespace web1.Admin
         public string uname;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.End();
             com.adminLogin();
             //if (Session["AdminName"] != null)
             //{

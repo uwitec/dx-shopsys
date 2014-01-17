@@ -11,32 +11,32 @@
     <form id="form1" runat="server">
     <div>
         <h4>
-            &nbsp;&nbsp; 当前栏目：<%Response.Write(pname); %>
-            &nbsp;&nbsp; <a href="ProAdd.aspx?pid=<%Response.Write(pid); %>">添加</a>
+            &nbsp;&nbsp; 当前栏目：<%Response.Write(lbname); %>
+            &nbsp;&nbsp; <a href="ProAdd.aspx?lbid=<%Response.Write(lbid); %>">添加</a>
         </h4>
-        <asp:HiddenField ID="hPid" runat="server" />
-        <asp:GridView ID="GV" runat="server" CssClass="tabelStyle" DataKeyNames="NewsID" AutoGenerateColumns="False" onrowcommand="GV_RowCommand"
+        <asp:HiddenField ID="hLbid" runat="server" />
+        <asp:GridView ID="GV" runat="server" CssClass="tabelStyle" DataKeyNames="Id" AutoGenerateColumns="False" onrowcommand="GV_RowCommand"
             Width="100%" AllowPaging="True" PageSize="20" OnPageIndexChanging="GV_PageIndexChanging">
             <Columns>
-                <asp:BoundField DataField="title" HeaderText="标题" SortExpression="title" />
-                <asp:BoundField DataField="AddTime" HeaderText="添加时间" SortExpression="EditTime" />
+                <asp:BoundField DataField="Name" HeaderText="名称" SortExpression="Name" />
+                <asp:BoundField DataField="CreateTime" HeaderText="添加时间" SortExpression="EditTime" />
                 <asp:BoundField DataField="EditTime" HeaderText="修改时间" SortExpression="EditTime" />
                 <asp:TemplateField HeaderText="置顶" Visible="false">
                     <ItemTemplate>
-                        <%# setTopBtn(Eval("NewsID").ToString()) %></ItemTemplate>
+                        <%# setTopBtn(Eval("Id").ToString()) %></ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="首页显示" Visible="false">
+                <asp:TemplateField HeaderText="首页显示" Visible="true">
                     <ItemTemplate>
-                        <%# setIsIndex(Eval("NewsID").ToString())%></ItemTemplate>
+                        <%# setIsIndex(Eval("Id").ToString())%></ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="图片管理">
                     <ItemTemplate>
                         <asp:Button ID="btnPicMng" runat="server" Text="管理" CommandName="PicMng" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:HyperLinkField DataNavigateUrlFields="NewsID,pid" DataNavigateUrlFormatString="ProAdd.aspx?id={0}&pid={1}"
+                <asp:HyperLinkField DataNavigateUrlFields="Id,lbid" DataNavigateUrlFormatString="ProAdd.aspx?id={0}&lbid={1}"
                     HeaderText="修改" Text="修改" />
-                <asp:HyperLinkField DataNavigateUrlFields="NewsID,pid" DataNavigateUrlFormatString="Prod.aspx?act=del&pid={1}&id={0}"
+                <asp:HyperLinkField DataNavigateUrlFields="Id,lbid" DataNavigateUrlFormatString="Prod.aspx?act=del&lbid={1}&id={0}"
                     HeaderText="删除" Text="删除" />
             </Columns>
             <EmptyDataTemplate>

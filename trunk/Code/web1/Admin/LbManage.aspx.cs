@@ -91,7 +91,7 @@ namespace web1.Admin
                 string id = this.GV.DataKeys[e.RowIndex].Value.ToString();
 
                 // 删除数据
-                if (clsLB.idHasChild(id))
+                if (clsLB.HasChild(id))
                 {
                     lblMsg.Text = "您要删除的类下面有子类别，请先删除子类。";
                     return;

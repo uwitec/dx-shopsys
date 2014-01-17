@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Web;
 using System.Data;
 using DBFramework;
-using DBFramework.Entities;
-namespace web
+//using DBFramework.Entities;
+using web1.Models;
+using System.Linq;
+namespace web1
 {
     public static class clsLB
     {
+        
         public static DataSet GetLblist()
         {
             string sql = string.Format(@"SELECT lbid,lbname FROM " + com.tablePrefix + "lb WHERE parentid=0 ORDER BY lbid");
@@ -75,7 +77,7 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
         {
             if (lbid != "0")
             {
-                string sql = "SELECT lbname from " + com.tablePrefix + "lb WHERE lbid=" + lbid + "";
+                string sql = "SELECT lbname from DXLb WHERE Id=" + lbid + "";
                 SQLHelper_ db = new SQLHelper_();
                 db.sql = sql;
                 DataTable dt = db.Get_DataTable();
@@ -93,9 +95,17 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
                 return "顶级栏目";
             }
         }
+        //public static DXLb getParent(DXLb thislb)
+        //{
+        //    Models.DbClassesDataContext dbc = new Models.DbClassesDataContext();
+        //    var qry = from lb in dbc.DXLb where lb.Id == thislb.ParentId select lb;
+        //    DXLb parent = dbc.DXLb.First(c => c.ParentId == thislb.ParentId);
+        //    return parent;
+        //}
+
         public static string getPid(string lbid)
         {
-            string sql = "SELECT parentid from " + com.tablePrefix + "lb WHERE lbid=" + lbid + "";
+            string sql = "SELECT parentid from " + com.tablePrefix + "lb WHERE Id=" + lbid + "";
             SQLHelper_ db = new SQLHelper_();
             db.sql = sql;
             DataTable dt = db.Get_DataTable();
@@ -178,22 +188,26 @@ ORDER BY a.lbid,b.lbid,c.lbid,d.lbid");
                 db.ExecSql();
             }
         }
-
-        public static bool idHasChild(string id)
+        public static bool HasChild(string id)
         {
-            List<DXLb> lblist = SQLHelper.GetEntities<DXLb>("parentid=" + id);
-
-            if (lblist.Count > 0)
+            string sql = "SELECT COUNT(0) FROM " + com.tablePrefix + "lb WHERE parentid=" + id;
+            DataTable dt = db.Get_DataTable(sql);
+            if (Int32.Parse(dt.Rows[0][0].ToString()) > 0)
+            {
                 return true;
+            }
             else
+            {
                 return false;
+            }
         }
+
+
 
         public static void del(string id)
         {
-            SQLHelper.DeleteEntity<DXLb>(id);
             SQLHelper_ db = new SQLHelper_();
-            db.sql = "UPDATE lb SET isDeleted=1 WHERE id="+id;
+            db.sql = "UPDATE dxlb SET isDeleted=1 WHERE id="+id;
             db.ExecSql();
         }
         public static bool lbnameExists(string lbname)

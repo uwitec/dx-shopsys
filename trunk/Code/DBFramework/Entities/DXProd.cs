@@ -25,6 +25,7 @@ namespace DBFramework.Entities
          */
         [PropertyType(IsPrimaryKey = true)]
         public int Id { get; set; }
+        public int lbid { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Body { get; set; }

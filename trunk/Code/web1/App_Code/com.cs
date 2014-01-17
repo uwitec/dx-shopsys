@@ -12,11 +12,11 @@ using System.Text;
 using System.Reflection;
 using System.Collections.Generic;
 
-namespace web
+namespace web1
 {
     public static class com
     {
-        public const string tablePrefix = "dianxin_";
+        public const string tablePrefix = "DX";
         public static bool active()
         {
             if (Int32.Parse(DateTime.Now.ToString("yyyyMMdd")) <= 20181103)

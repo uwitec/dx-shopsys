@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="../swfupload/handlers.js"></script>
 	<script type="text/javascript">
 	    function showOldPic() {
-	        return;
+	        //return;
 	        var pics = $("#hPic").val().replace("||", "|");
 	        if (pics.replace("|", "") == "") {
 	            $("#picContent2").hide();
@@ -24,38 +24,37 @@
 	            //	                alert(childs[i].nodeName);
 	            //	                picListObj.removeChild(childs[i]);
 	            //	            }
-	            /*
+
 	            var n = 0;
 	            //alert(pics);
 	            var imgs = pics.split("|");
 	            for (var i = 0; i < imgs.length; i++) {
-	            if (imgs[i] != "") {
-	            n++;
-	            var newLi = document.createElement("li");
-	            newLi.setAttribute("id", "newLi" + i.toString());
+	                if (imgs[i] != "") {
+	                    n++;
+	                    var newLi = document.createElement("li");
+	                    newLi.setAttribute("id", "newLi" + i.toString());
 
-	            var newLink = document.createElement("a");
-	            newLink.href = "#";
-	            newLink.target = "_self";
-	            newLink.innerHTML = "<BR>删除"; 
+	                    var newLink = document.createElement("a");
+	                    newLink.href = "#";
+	                    newLink.target = "_self";
+	                    newLink.innerHTML = "<BR>删除"; 
 
-	            var newImg = document.createElement("img");
-	            newImg.setAttribute("src", imgs[i]);
-	            newImg.width = 100;
-	            newImg.height = 100;
-	            document.getElementById("picList").appendChild(newLi);
+	                    var newImg = document.createElement("img");
+	                    newImg.setAttribute("src", imgs[i]);
+	                    newImg.width = 100;
+	                    newImg.height = 100;
+	                    document.getElementById("picList").appendChild(newLi);
 	                    
-	            document.getElementById("newLi" + i.toString()).appendChild(newImg);
-	            document.getElementById("newLi" + i.toString()).appendChild(newLink);
-	            //$("#picList").appendChild(newLi);
-	            //$("#newLi" + i).appendChild(newImg).appendChild(newLink);
-
-	            //document.getElementById("thumbnails").appendChild(newImg);
-	            }
+	                    document.getElementById("newLi" + i.toString()).appendChild(newImg);
+	                    document.getElementById("newLi" + i.toString()).appendChild(newLink);
+	                    //$("#picList").appendChild(newLi);
+	                    //$("#newLi" + i).appendChild(newImg).appendChild(newLink);
+	                    //document.getElementById("thumbnails").appendChild(newImg);
+	                }
 	            }
 	            //alert(n + "张图片载入完成。")
 	            addClickEvent();
-	            */
+
 	        }
 	    }
 	    function showOldSmallPic() {
@@ -72,9 +71,8 @@
 	        $("#picList li a").click(function () {
 	            //alert(this.attr("src"));
 	            var src = $(this).parents("li").children("img").attr("src");
-	            //alert(src);
 	            //删除图片，并更新数据库
-	            $.post("NewsAdd.aspx", "act=delpic&id=<%=hID.Value %>&imgsrc=" + src, function (data) {
+	            $.post("ProAdd.aspx", "act=delpic&id=<%=hID.Value %>&imgsrc=" + src, function (data) {
 	                if (data != "") {
 	                    //$(this).parents("li").remove();//.hide();
 	                    var pic = $("#hPic").val();
@@ -94,7 +92,7 @@
 	    var swfu_small;
 	    window.onload = function () {
 	        showOldSmallPic();
-	        /*
+
 	        showOldPic();
 
 	        swfu = new SWFUpload({
@@ -120,10 +118,10 @@
 	        upload_progress_handler: uploadProgress,
 	        upload_error_handler: uploadError,
 	        upload_success_handler: function (file, data) {
-	        //alert("上传完成: " + data);
-	        //$("#picContent2").show();
-	        addImage(data);
-	        document.getElementById("hPic_new").value += "|" + data;
+	            //alert("上传完成: " + data);
+	            //$("#picContent2").show();
+	            addImage(data);
+	            document.getElementById("hPic_new").value += "|" + data;
 	        },
 	        upload_complete_handler: uploadComplete,
 
@@ -147,7 +145,7 @@
 	        // Debug Settings
 	        debug: false
 	        });
-	        */
+
 	        swfu_small = new SWFUpload({
 	            //upload_url作用：保存图片文件，并返回文件名。后面将得到的文件名保存到hidden中
 	            upload_url: "upfile.aspx",
@@ -159,7 +157,7 @@
 	            },
 
 	            // File Upload Settings
-	            file_size_limit: "200 KB",
+	            file_size_limit: "500 KB",
 	            file_types: "*.jpg;*.gif",
 	            file_types_description: "JPG Images;GIF Images",
 	            file_upload_limit: "1",    // Zero means unlimited
@@ -172,7 +170,7 @@
 	            upload_progress_handler: uploadProgress,
 	            upload_error_handler: uploadError,
 	            upload_success_handler: function (file, data) {
-	                //alert("上传完成: " + data);
+	                alert("small上传完成: " + data);
 	                //$("#PicSmall").attr("src", data);
 	                document.getElementById("PicSmall").src = data;
 	                document.getElementById("hSmallPic_new").value = data;
@@ -187,7 +185,7 @@
 	            button_placeholder_id: "spanButtonPlaceholder_small",
 	            button_width: 160,
 	            button_height: 22,
-	            button_text: '<span class="button">浏览<span class="buttonSmall">(200 KB Max)</span></span>',
+	            button_text: '<span class="button">浏览<span class="buttonSmall">(500 KB Max)</span></span>',
 	            button_text_style: '.button { font-family: Helvetica, Arial, sans-serif; font-size: 14pt; } .buttonSmall { font-size: 10pt; }',
 	            button_text_top_padding: 1,
 	            button_text_left_padding: 5,
@@ -253,13 +251,6 @@ ul#picList li img
         </tr>
         <tr>
             <td>
-                编号：</td>
-            <td>
-            <asp:TextBox ID="tbxBianhao" runat="server" Width="200px"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 发布时间：
             </td>
             <td>
@@ -274,18 +265,10 @@ ul#picList li img
                 </asp:RadioButtonList>
             </td>
         </tr>
-        <tr>
-            <td>
-                面料：</td>
-            <td>
-            <asp:TextBox ID="tbxMianliao" runat="server" Width="200px"></asp:TextBox>
-            </td>
-        </tr>
 
         <tr>
             <td>
-                缩略图：<br />
-                在最近浏览内容中显示
+                缩略图：
             </td>
             <td>
             
@@ -298,13 +281,13 @@ ul#picList li img
                 px</td>
         </tr>
 
-        <tr style="display:none;">
+        <tr>
             <td>
                 图片集：
             </td>
             <td>
                 <span id="spanButtonPlaceholder"></span>
-                <div id="picContent2" style="display:none;">
+                <div id="picContent2" style="display:block;">
                 旧图：
                 <ul id="picList">
                 <%--<li id="img1"><img src="/UpFile/20120409115500603.jpg"/><br /><a href="#" id="a1">删除</a></li>
@@ -315,28 +298,22 @@ ul#picList li img
                 <div id="thumbnails"></div>
             </td>
         </tr>
-        <tr style="display:none;">
+        <tr>
             <td>
                 说明：
             </td>
             <td>
                 上传图片：上传文件后，单击下面的保存按钮才会生效。
             </td>
-</tr>
-        <tr>
-            <td>
-                尺寸信息：
-            </td>
-            <td>
-            <asp:TextBox ID="tbxSize" runat="server" Width="300px" TextMode="MultiLine" Height="100"></asp:TextBox>
-            </td>
         </tr>
         <tr>
             <td>
-                产品特点：
+                产品说明：
             </td>
-            <td><asp:TextBox ID="tbxBody" runat="server" Width="300px" TextMode="MultiLine" Height="100"></asp:TextBox>
-                </td>
+            <td>
+                <FCKeditorV2:FCKeditor ID="FCKeditor1" runat="server" Height="300">
+                </FCKeditorV2:FCKeditor>
+            </td>
         </tr>
         <tr>
             <td>

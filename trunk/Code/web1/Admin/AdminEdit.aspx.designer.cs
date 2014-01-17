@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace web.admin {
+namespace web1.admin {
     
     
     public partial class AdminEdit {

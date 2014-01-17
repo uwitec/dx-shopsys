@@ -2,7 +2,7 @@
 using System.Text;
 using System.Web;
 
-namespace web
+namespace web1
 {
     public static class alert
     {

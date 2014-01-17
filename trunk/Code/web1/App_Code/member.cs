@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
 
-namespace web
+namespace web1
 {
     public static class member
     {
