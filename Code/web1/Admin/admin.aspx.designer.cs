@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace web.admin {
+namespace web1.admin {
     
     
     public partial class admin {
@@ -28,7 +28,7 @@ namespace web.admin {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::web.CheckAdminLogin CheckAdminLogin1;
+        protected global::web1.CheckAdminLogin CheckAdminLogin1;
         
         /// <summary>
         /// GV 控件。

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Web;
 
-namespace web
+namespace web1
 {
     public sealed class seo
     {

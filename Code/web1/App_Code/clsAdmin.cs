@@ -13,7 +13,7 @@ using DBFramework;
 using DBFramework.Entities;
 using System.Collections.Generic;
 
-namespace web
+namespace web1
 {
     public static class clsAdmin
     {

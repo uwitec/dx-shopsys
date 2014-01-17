@@ -54,6 +54,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -416,7 +417,10 @@
     <Content Include="swfupload\swfupload.js" />
     <Content Include="swfupload\swfupload.swf" />
     <Content Include="swfupload\swfuploadbutton.swf" />
-    <Content Include="Web.config" />
+    <Content Include="Test.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -684,7 +688,17 @@
     <Compile Include="install\install.aspx.designer.cs">
       <DependentUpon>install.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DbClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="SwfUploadDemo\App_Code\Thumbnail.cs" />
     <Compile Include="SwfUploadDemo\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -715,6 +729,13 @@
     <Compile Include="SwfUploadDemo\upload2.aspx.designer.cs">
       <DependentUpon>upload2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -725,6 +746,15 @@
     <None Include="fonts\din1451e.woff" />
     <None Include="fonts\gotham.woff" />
     <None Include="fonts\ptsnas.woff" />
+    <Content Include="Models\DbClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DbClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="SwfUploadDemo\Web.Config--" />
   </ItemGroup>
   <ItemGroup>
@@ -732,6 +762,14 @@
       <Project>{E691AAB6-E3D1-4C94-8D85-E9EFE2F18BE9}</Project>
       <Name>DBFramework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DbClasses.dbml.layout">
+      <DependentUpon>DbClasses.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

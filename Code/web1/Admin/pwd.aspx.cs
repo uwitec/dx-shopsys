@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using web1;
 namespace web.admin
 {
     public partial class pwd : System.Web.UI.Page

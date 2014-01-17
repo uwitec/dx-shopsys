@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using DBFramework.Entities;
 
 
-namespace web.admin
+namespace web1.admin
 {
     public partial class admin : System.Web.UI.Page
     {

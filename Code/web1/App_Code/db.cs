@@ -9,7 +9,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Web;
 
-namespace web
+namespace web1
 {
     public static class db
     {

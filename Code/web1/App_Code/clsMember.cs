@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Collections;
-namespace web
+namespace web1
 {
     public class Member
     {

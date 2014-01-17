@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Text.RegularExpressions;
 
-namespace web
+namespace web1
 {
     public static class pg
     {

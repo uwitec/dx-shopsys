@@ -44,7 +44,7 @@
                         </td>
                     </tr>
                 </table>
-                <table id="child1" style="display: block" cellspacing="0" cellpadding="0" width="150"
+                <table id="child1" style="display: none" cellspacing="0" cellpadding="0" width="150"
                     border="0">
                     <tr height="20">
                         <td align="middle" width="30">
@@ -83,6 +83,37 @@
                         </td>
                     </tr>
                 </table>
+
+                <table cellspacing="0" cellpadding="0" width="150" border="0">
+                    <tr height="22" onclick="expand(4)" class="menuParentTr">
+                        <td style="padding-left: 40px" background="images/menu_bt.jpg" align="left">
+                            <a class="menuParent" href="javascript:void(0);">产品管理</a>
+                        </td>
+                    </tr>
+                    <tr height="4">
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+                 <table id="child4" style="display: block" cellspacing="0" cellpadding="0" width="150"
+                    border="0">
+                    <tr>
+                        <td align="left">
+                           <%--<asp:Menu ID="MenuProLb" runat="server" ></asp:Menu>--%>
+                            <asp:TreeView ID="proLbTree" runat="server">
+                            </asp:TreeView>
+                        </td>
+                    </tr>
+
+
+                    <tr height="4">
+                        <td colspan="2">
+                        </td>
+                    </tr>
+                </table>
+
+
+
                 <table cellspacing="0" cellpadding="0" width="150" border="0">
                     <tr height="22" onclick="expand(2)" class="menuParentTr">
                         <td style="padding-left: 40px" background="images/menu_bt.jpg" align="left">
@@ -94,7 +125,7 @@
                         </td>
                     </tr>
                 </table>
-                <table id="child2" style="display: block" cellspacing="0" cellpadding="0" width="150"
+                <table id="child2" style="display: none" cellspacing="0" cellpadding="0" width="150"
                     border="0">
                     <tr>
                         <td align="middle" height="20" width="30">
@@ -123,6 +154,8 @@
                             <a class="menuChild" href="proLb.aspx" target="main">类别管理</a>
                         </td>
                     </tr>
+                    
+
                         <asp:Repeater ID="rptProLbParent" runat="server">
                         <ItemTemplate>
                     <tr>
@@ -131,8 +164,8 @@
                         </td>
                         <td align="left">
 
-                        <a class="menuChild" href="prod.aspx?pid=<%#Eval("lbid") %>" target="main"><%#Eval("lbname") %></a>
-                        &nbsp;<a class="menuChild" href="prod.aspx?pid=<%#Eval("lbid") %>" target="main">管理</a>|<a href="ProAdd.aspx?pid=<%#Eval("lbid") %>" target="main">添加</a>
+                        <a class="menuChild" href="prod.aspx?pid=<%#Eval("Id") %>" target="main"><%#Eval("lbname") %></a>
+                        &nbsp;<a class="menuChild" href="prod.aspx?pid=<%#Eval("Id") %>" target="main">管理</a>|<a href="ProAdd.aspx?pid=<%#Eval("Id") %>" target="main">添加</a>
                         </td>
                     </tr>
                         </ItemTemplate>
@@ -154,7 +187,7 @@
                         </td>
                     </tr>
                 </table>
-                <table id="child3" style="display: block" cellspacing="0" cellpadding="0" width="150"
+                <table id="child3" style="display: none" cellspacing="0" cellpadding="0" width="150"
                     border="0">
                     <tr>
                         <td align="middle" height="20" width="30">
@@ -200,7 +233,7 @@
                         </td>
                     </tr>
                 </table>
-                <table id="child7" style="display: block" cellspacing="0" cellpadding="0" width="150"
+                <table id="child7" style="display: none" cellspacing="0" cellpadding="0" width="150"
                     border="0">
 <%--                    <tr height="20">
                         <td align="middle" width="30">
